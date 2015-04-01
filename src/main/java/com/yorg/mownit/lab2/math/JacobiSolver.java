@@ -1,5 +1,6 @@
-package com.yorg.mownit.lab2;
+package com.yorg.mownit.lab2.math;
 
+import lombok.Getter;
 import org.ejml.simple.SimpleMatrix;
 
 import java.util.ArrayList;
@@ -10,8 +11,8 @@ import java.util.List;
  */
 public class JacobiSolver {
 
-    private SimpleMatrix A;
-    private SimpleMatrix b;
+    @Getter private SimpleMatrix A;
+    @Getter private SimpleMatrix b;
 
     private SimpleMatrix M;
     private SimpleMatrix N;
@@ -100,26 +101,6 @@ public class JacobiSolver {
                 }
             }
         }
-    }
-
-    public boolean isJacobiConvergent() {
-
-        int limit = Math.min(A.numCols(), A.numRows());
-
-        for(int i = 0; i < limit; ++i) {
-            double a_ii = A.get(i, i);
-            double sum = 0.0d;
-            for(int j = 0; j < A.numCols(); ++j ) {
-                if(i != j) {
-                    sum += Math.abs(A.get(i, j));
-                }
-            }
-            if(a_ii <= sum) {
-                return false;
-            }
-        }
-
-        return true;
     }
 
 }

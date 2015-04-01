@@ -1,5 +1,8 @@
 package com.yorg.mownit.lab2;
 
+import com.yorg.mownit.lab2.math.JacobiSolver;
+import com.yorg.mownit.lab2.math.MatrixUtils;
+import com.yorg.mownit.lab2.math.VectorUtils;
 import org.ejml.simple.SimpleMatrix;
 
 /**
@@ -7,33 +10,60 @@ import org.ejml.simple.SimpleMatrix;
  */
 public class Lab2Runner {
 
+    // TODO: czy warunek zbieznosci jest konieczny, czy wystarczający?
+    // policzyc promien spektralny
+
+    private static final int k = 8;
+    private static final int m = 2;
+
     public static void main(String[] args) {
 
-        double [][] exampleA = {
-                { 4, -1, -0.2, 2 },
-                { -1, 5, 0, -2 },
-                { 0.2, 1, 10, -1 },
-                { 0, -2, -1, 4 }
-        };
+        double stopLimit = 0.001d;
 
-        double [] b = { 30, 0, -10, 5 };
+        StopCritter stop = new EuclidianNormBetweenIterationsCritter(stopLimit);
+        conductExperiment(30, stopLimit, stop);
 
-        SimpleMatrix A = new SimpleMatrix(4, 4);
-        SimpleMatrix x = new SimpleMatrix(4, 1);
+    }
 
-        for(int i = 0; i < 4; ++i) {
-            for(int j = 0; j < 4; ++j) {
-                A.set(i, j, exampleA[i][j] );
-            }
-            x.set(i, 0, b[i]);
+    private static void conductExperiment(int N, double r, StopCritter stop) {
+
+        System.out.println("STARTING EXPERIMENT\n");
+        System.out.println("Stop criteria: " + stop.getDescription());
+        System.out.println("Problem size N: " + N);
+
+        Lab2 lab2 = new Lab2(MatrixElementType.A);
+
+        SimpleMatrix A = lab2.getMatrix(N, m, k);
+        SimpleMatrix x = VectorUtils.getRandomVactor(N);
+
+        SimpleMatrix b = A.mult(x);
+
+        JacobiSolver solver = new JacobiSolver(A, b);
+
+        System.out.println("\nMatrix A:\n");
+        System.out.println(A);
+
+        System.out.println("\nOriginal vector x:\n");
+        System.out.println(x);
+
+        System.out.println("\nVector b:\n");
+        System.out.println(b);
+
+        System.out.println("Should it be convergent based on A? " + MatrixUtils.isJacobiConvergent(A));
+        System.out.println();
+
+        Experiment experiment = new Experiment(solver, stop);
+        experiment.start();
+
+        if(experiment.getResult() != null) {
+            System.out.println("Result: ");
+            System.out.printf("Difference dropped below %f after %d iterations\n", r, experiment.getIterationCount());
+            System.out.println("Total time: " + experiment.getTotalDuration() + " ms");
+            System.out.println("Simulation time: " + experiment.getSimulationDuration() + " ms");
+            System.out.println(experiment.getResult());
+        } else {
+            System.out.println("Experiment failed - the result was not convergent after " + Experiment.MAX_ITERATIONS + " iterations");
         }
 
-        JacobiSolver solver = new JacobiSolver(A, x);
-
-        System.out.println("Convergent? " + solver.isJacobiConvergent());
-
-        for(int i = 1; i <= 2; ++i) {
-            System.out.println(solver.getResult(i));
-        }
     }
 }
