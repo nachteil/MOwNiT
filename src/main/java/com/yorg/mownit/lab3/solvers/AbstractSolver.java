@@ -3,18 +3,17 @@ package com.yorg.mownit.lab3.solvers;
 import com.yorg.mownit.lab3.math.Function;
 import com.yorg.mownit.lab3.utils.Result;
 import com.yorg.mownit.lab3.utils.SolveParams;
+import com.yorg.mownit.lab3.utils.Stopper;
 
-/**
- * Created by yorg on 01.04.15.
- */
-public abstract class AbstractSolver {
+public abstract class AbstractSolver implements ISolver {
     protected final Function<Double> function;
 
     public AbstractSolver(Function<Double> function) {
         this.function = function;
     }
 
-    public Result solve(SolveParams params) {
+    @Override
+    public Result solve(SolveParams params, Stopper stopper) {
 
         double xPrevious = params.getCompartment().getStart();
         double xNext = params.getCompartment().getEnd();
@@ -22,17 +21,18 @@ public abstract class AbstractSolver {
 
         int i = 0;
 
-        while(i++ < params.getMaxIterationCount() && Math.abs(function.getValue(xNext)) > params.getAcccuracy()) {
+        while(! stopper.shouldStop(xPrevious, xNext, function.getValue(xNext), i)) {
             xNew = getNextApproximation(xPrevious, xNext);
             xPrevious = xNext;
             xNext = xNew;
-            System.out.println("Iteration: " + i);
+            ++i;
         }
 
         Result result;
-
+        System.out.println(i);
         if(i < params.getMaxIterationCount()) {
             result = new Result.CorrectResult(xNext);
+
         } else {
             result = new Result.IncorrectResult("At given precission (" + params.getAcccuracy()
                     + ") no result has been found in " + params.getMaxIterationCount() + " iterations");
