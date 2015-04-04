@@ -3,9 +3,6 @@ package com.yorg.mownit.lab3.solvers;
 import com.yorg.mownit.lab3.math.Function;
 import com.yorg.mownit.lab3.math.Polynomial;
 
-/**
- * Created by yorg on 01.04.15.
- */
 public class NewtonSolver extends AbstractSolver {
 
     private final Polynomial polynomialFuntion;

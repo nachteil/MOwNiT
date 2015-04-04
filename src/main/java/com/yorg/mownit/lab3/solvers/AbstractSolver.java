@@ -4,10 +4,8 @@ import com.yorg.mownit.lab3.math.Function;
 import com.yorg.mownit.lab3.utils.Result;
 import com.yorg.mownit.lab3.utils.SolveParams;
 
-/**
- * Created by yorg on 01.04.15.
- */
 public abstract class AbstractSolver {
+
     protected final Function<Double> function;
 
     public AbstractSolver(Function<Double> function) {
@@ -22,11 +20,10 @@ public abstract class AbstractSolver {
 
         int i = 0;
 
-        while(i++ < params.getMaxIterationCount() && Math.abs(function.getValue(xNext)) > params.getAcccuracy()) {
+        while(i++ < params.getMaxIterationCount() && Math.abs(function.getValue(xNext)) > params.getAccuracy()) {
             xNew = getNextApproximation(xPrevious, xNext);
             xPrevious = xNext;
             xNext = xNew;
-            System.out.println("Iteration: " + i);
         }
 
         Result result;
@@ -34,7 +31,7 @@ public abstract class AbstractSolver {
         if(i < params.getMaxIterationCount()) {
             result = new Result.CorrectResult(xNext);
         } else {
-            result = new Result.IncorrectResult("At given precission (" + params.getAcccuracy()
+            result = new Result.IncorrectResult("At given precission (" + params.getAccuracy()
                     + ") no result has been found in " + params.getMaxIterationCount() + " iterations");
         }
 

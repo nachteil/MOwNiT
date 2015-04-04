@@ -60,17 +60,6 @@ public class Polynomial implements Function<Double> {
         return sum;
     }
 
-    public static class PolynomialElement {
-
-        @Getter private final int n;
-        @Getter private final double a;
-
-        public PolynomialElement(double a, int n) {
-            this.a = a;
-            this.n = n;
-        }
-    }
-
     @Override
     public String toString() {
         elements.sort(comparator);
@@ -92,5 +81,16 @@ public class Polynomial implements Function<Double> {
             builder.replace(builder.length() - 2, builder.length(), "");
         }
         return builder.toString();
+    }
+
+    private static class PolynomialElement {
+
+        private final int n;
+        private final double a;
+
+        public PolynomialElement(double a, int n) {
+            this.a = a;
+            this.n = n;
+        }
     }
 }
