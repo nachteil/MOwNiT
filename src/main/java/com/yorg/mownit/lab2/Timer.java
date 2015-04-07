@@ -2,9 +2,6 @@ package com.yorg.mownit.lab2;
 
 import lombok.Getter;
 
-/**
- * Created by yorg on 25.03.15.
- */
 public class Timer {
 
     private long startTime;
