@@ -1,0 +1,711 @@
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-02
+Problem size N: 5
+Should it be convergent based on A? false
+Spectral radius: 1.2666666666666668
+
+Result: 
+Difference dropped below 1.000000e-02 after 21 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-03
+Problem size N: 5
+Should it be convergent based on A? false
+Spectral radius: 1.2666666666666668
+
+Result: 
+Difference dropped below 1.000000e-03 after 36 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-04
+Problem size N: 5
+Should it be convergent based on A? false
+Spectral radius: 1.2666666666666668
+
+Result: 
+Difference dropped below 1.000000e-04 after 48 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-05
+Problem size N: 5
+Should it be convergent based on A? false
+Spectral radius: 1.2666666666666668
+
+Result: 
+Difference dropped below 1.000000e-05 after 61 iterations
+Total time: 4 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-06
+Problem size N: 5
+Should it be convergent based on A? false
+Spectral radius: 1.2666666666666668
+
+Result: 
+Difference dropped below 1.000000e-06 after 68 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-07
+Problem size N: 5
+Should it be convergent based on A? false
+Spectral radius: 1.2666666666666668
+
+Result: 
+Difference dropped below 1.000000e-07 after 82 iterations
+Total time: 1 ms
+Simulation time: 1 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-08
+Problem size N: 5
+Should it be convergent based on A? false
+Spectral radius: 1.2666666666666668
+
+Result: 
+Difference dropped below 1.000000e-08 after 96 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-09
+Problem size N: 5
+Should it be convergent based on A? false
+Spectral radius: 1.2666666666666668
+
+Result: 
+Difference dropped below 1.000000e-09 after 105 iterations
+Total time: 4 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-10
+Problem size N: 5
+Should it be convergent based on A? false
+Spectral radius: 1.2666666666666668
+
+Result: 
+Difference dropped below 1.000000e-10 after 116 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-11
+Problem size N: 5
+Should it be convergent based on A? false
+Spectral radius: 1.2666666666666668
+
+Result: 
+Difference dropped below 1.000000e-11 after 128 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-12
+Problem size N: 5
+Should it be convergent based on A? false
+Spectral radius: 1.2666666666666668
+
+Result: 
+Difference dropped below 1.000000e-12 after 138 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-13
+Problem size N: 5
+Should it be convergent based on A? false
+Spectral radius: 1.2666666666666668
+
+Result: 
+Difference dropped below 1.000000e-13 after 151 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-14
+Problem size N: 5
+Should it be convergent based on A? false
+Spectral radius: 1.2666666666666668
+
+Result: 
+Difference dropped below 1.000000e-14 after 164 iterations
+Total time: 1 ms
+Simulation time: 1 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-02
+Problem size N: 25
+Should it be convergent based on A? false
+Spectral radius: 2.191043991683771
+
+Result: 
+Difference dropped below 1.000000e-02 after 30 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-03
+Problem size N: 25
+Should it be convergent based on A? false
+Spectral radius: 2.191043991683771
+
+Result: 
+Difference dropped below 1.000000e-03 after 38 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-04
+Problem size N: 25
+Should it be convergent based on A? false
+Spectral radius: 2.191043991683771
+
+Result: 
+Difference dropped below 1.000000e-04 after 57 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-05
+Problem size N: 25
+Should it be convergent based on A? false
+Spectral radius: 2.191043991683771
+
+Result: 
+Difference dropped below 1.000000e-05 after 60 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-06
+Problem size N: 25
+Should it be convergent based on A? false
+Spectral radius: 2.191043991683771
+
+Result: 
+Difference dropped below 1.000000e-06 after 81 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-07
+Problem size N: 25
+Should it be convergent based on A? false
+Spectral radius: 2.191043991683771
+
+Result: 
+Difference dropped below 1.000000e-07 after 94 iterations
+Total time: 1 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-08
+Problem size N: 25
+Should it be convergent based on A? false
+Spectral radius: 2.191043991683771
+
+Result: 
+Difference dropped below 1.000000e-08 after 102 iterations
+Total time: 1 ms
+Simulation time: 1 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-09
+Problem size N: 25
+Should it be convergent based on A? false
+Spectral radius: 2.191043991683771
+
+Result: 
+Difference dropped below 1.000000e-09 after 116 iterations
+Total time: 1 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-10
+Problem size N: 25
+Should it be convergent based on A? false
+Spectral radius: 2.191043991683771
+
+Result: 
+Difference dropped below 1.000000e-10 after 118 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-11
+Problem size N: 25
+Should it be convergent based on A? false
+Spectral radius: 2.191043991683771
+
+Result: 
+Difference dropped below 1.000000e-11 after 142 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-12
+Problem size N: 25
+Should it be convergent based on A? false
+Spectral radius: 2.191043991683771
+
+Result: 
+Difference dropped below 1.000000e-12 after 158 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-13
+Problem size N: 25
+Should it be convergent based on A? false
+Spectral radius: 2.191043991683771
+
+Result: 
+Difference dropped below 1.000000e-13 after 168 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-14
+Problem size N: 25
+Should it be convergent based on A? false
+Spectral radius: 2.191043991683771
+
+Result: 
+Difference dropped below 1.000000e-14 after 182 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-02
+Problem size N: 125
+Should it be convergent based on A? false
+Spectral radius: 3.0306797257397933
+
+Result: 
+Difference dropped below 1.000000e-02 after 32 iterations
+Total time: 0 ms
+Simulation time: 0 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-03
+Problem size N: 125
+Should it be convergent based on A? false
+Spectral radius: 3.0306797257397933
+
+Result: 
+Difference dropped below 1.000000e-03 after 46 iterations
+Total time: 2 ms
+Simulation time: 2 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-04
+Problem size N: 125
+Should it be convergent based on A? false
+Spectral radius: 3.0306797257397933
+
+Result: 
+Difference dropped below 1.000000e-04 after 53 iterations
+Total time: 1 ms
+Simulation time: 1 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-05
+Problem size N: 125
+Should it be convergent based on A? false
+Spectral radius: 3.0306797257397933
+
+Result: 
+Difference dropped below 1.000000e-05 after 69 iterations
+Total time: 2 ms
+Simulation time: 1 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-06
+Problem size N: 125
+Should it be convergent based on A? false
+Spectral radius: 3.0306797257397933
+
+Result: 
+Difference dropped below 1.000000e-06 after 83 iterations
+Total time: 2 ms
+Simulation time: 2 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-07
+Problem size N: 125
+Should it be convergent based on A? false
+Spectral radius: 3.0306797257397933
+
+Result: 
+Difference dropped below 1.000000e-07 after 96 iterations
+Total time: 3 ms
+Simulation time: 3 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-08
+Problem size N: 125
+Should it be convergent based on A? false
+Spectral radius: 3.0306797257397933
+
+Result: 
+Difference dropped below 1.000000e-08 after 105 iterations
+Total time: 2 ms
+Simulation time: 2 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-09
+Problem size N: 125
+Should it be convergent based on A? false
+Spectral radius: 3.0306797257397933
+
+Result: 
+Difference dropped below 1.000000e-09 after 115 iterations
+Total time: 3 ms
+Simulation time: 3 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-10
+Problem size N: 125
+Should it be convergent based on A? false
+Spectral radius: 3.0306797257397933
+
+Result: 
+Difference dropped below 1.000000e-10 after 132 iterations
+Total time: 3 ms
+Simulation time: 3 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-11
+Problem size N: 125
+Should it be convergent based on A? false
+Spectral radius: 3.0306797257397933
+
+Result: 
+Difference dropped below 1.000000e-11 after 129 iterations
+Total time: 4 ms
+Simulation time: 4 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-12
+Problem size N: 125
+Should it be convergent based on A? false
+Spectral radius: 3.0306797257397933
+
+Result: 
+Difference dropped below 1.000000e-12 after 156 iterations
+Total time: 4 ms
+Simulation time: 4 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-13
+Problem size N: 125
+Should it be convergent based on A? false
+Spectral radius: 3.0306797257397933
+
+Result: 
+Difference dropped below 1.000000e-13 after 165 iterations
+Total time: 4 ms
+Simulation time: 4 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-14
+Problem size N: 125
+Should it be convergent based on A? false
+Spectral radius: 3.0306797257397933
+
+Result: 
+Difference dropped below 1.000000e-14 after 163 iterations
+Total time: 4 ms
+Simulation time: 4 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-02
+Problem size N: 625
+Should it be convergent based on A? false
+Spectral radius: 3.8476215845156765
+
+Result: 
+Difference dropped below 1.000000e-02 after 35 iterations
+Total time: 27 ms
+Simulation time: 26 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-03
+Problem size N: 625
+Should it be convergent based on A? false
+Spectral radius: 3.8476215845156765
+
+Result: 
+Difference dropped below 1.000000e-03 after 46 iterations
+Total time: 35 ms
+Simulation time: 35 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-04
+Problem size N: 625
+Should it be convergent based on A? false
+Spectral radius: 3.8476215845156765
+
+Result: 
+Difference dropped below 1.000000e-04 after 55 iterations
+Total time: 36 ms
+Simulation time: 36 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-05
+Problem size N: 625
+Should it be convergent based on A? false
+Spectral radius: 3.8476215845156765
+
+Result: 
+Difference dropped below 1.000000e-05 after 70 iterations
+Total time: 47 ms
+Simulation time: 47 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-06
+Problem size N: 625
+Should it be convergent based on A? false
+Spectral radius: 3.8476215845156765
+
+Result: 
+Difference dropped below 1.000000e-06 after 78 iterations
+Total time: 53 ms
+Simulation time: 53 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-07
+Problem size N: 625
+Should it be convergent based on A? false
+Spectral radius: 3.8476215845156765
+
+Result: 
+Difference dropped below 1.000000e-07 after 83 iterations
+Total time: 54 ms
+Simulation time: 54 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-08
+Problem size N: 625
+Should it be convergent based on A? false
+Spectral radius: 3.8476215845156765
+
+Result: 
+Difference dropped below 1.000000e-08 after 104 iterations
+Total time: 77 ms
+Simulation time: 77 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-09
+Problem size N: 625
+Should it be convergent based on A? false
+Spectral radius: 3.8476215845156765
+
+Result: 
+Difference dropped below 1.000000e-09 after 106 iterations
+Total time: 72 ms
+Simulation time: 70 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-10
+Problem size N: 625
+Should it be convergent based on A? false
+Spectral radius: 3.8476215845156765
+
+Result: 
+Difference dropped below 1.000000e-10 after 130 iterations
+Total time: 87 ms
+Simulation time: 85 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-11
+Problem size N: 625
+Should it be convergent based on A? false
+Spectral radius: 3.8476215845156765
+
+Result: 
+Difference dropped below 1.000000e-11 after 136 iterations
+Total time: 100 ms
+Simulation time: 94 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-12
+Problem size N: 625
+Should it be convergent based on A? false
+Spectral radius: 3.8476215845156765
+
+Result: 
+Difference dropped below 1.000000e-12 after 160 iterations
+Total time: 104 ms
+Simulation time: 104 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-13
+Problem size N: 625
+Should it be convergent based on A? false
+Spectral radius: 3.8476215845156765
+
+Result: 
+Difference dropped below 1.000000e-13 after 172 iterations
+Total time: 117 ms
+Simulation time: 116 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-14
+Problem size N: 625
+Should it be convergent based on A? false
+Spectral radius: 3.8476215845156765
+
+Result: 
+Difference dropped below 1.000000e-14 after 6709 iterations
+Total time: 4669 ms
+Simulation time: 4646 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-02
+Problem size N: 3125
+Should it be convergent based on A? false
+Spectral radius: 4.656569053287046
+
+Result: 
+Difference dropped below 1.000000e-02 after 38 iterations
+Total time: 631 ms
+Simulation time: 631 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-03
+Problem size N: 3125
+Should it be convergent based on A? false
+Spectral radius: 4.656569053287046
+
+Result: 
+Difference dropped below 1.000000e-03 after 48 iterations
+Total time: 874 ms
+Simulation time: 874 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-04
+Problem size N: 3125
+Should it be convergent based on A? false
+Spectral radius: 4.656569053287046
+
+Result: 
+Difference dropped below 1.000000e-04 after 59 iterations
+Total time: 1011 ms
+Simulation time: 1000 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-05
+Problem size N: 3125
+Should it be convergent based on A? false
+Spectral radius: 4.656569053287046
+
+Result: 
+Difference dropped below 1.000000e-05 after 67 iterations
+Total time: 1175 ms
+Simulation time: 1175 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-06
+Problem size N: 3125
+Should it be convergent based on A? false
+Spectral radius: 4.656569053287046
+
+Result: 
+Difference dropped below 1.000000e-06 after 85 iterations
+Total time: 1444 ms
+Simulation time: 1443 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-07
+Problem size N: 3125
+Should it be convergent based on A? false
+Spectral radius: 4.656569053287046
+
+Result: 
+Difference dropped below 1.000000e-07 after 86 iterations
+Total time: 1492 ms
+Simulation time: 1492 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-08
+Problem size N: 3125
+Should it be convergent based on A? false
+Spectral radius: 4.656569053287046
+
+Result: 
+Difference dropped below 1.000000e-08 after 107 iterations
+Total time: 1796 ms
+Simulation time: 1794 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-09
+Problem size N: 3125
+Should it be convergent based on A? false
+Spectral radius: 4.656569053287046
+
+Result: 
+Difference dropped below 1.000000e-09 after 112 iterations
+Total time: 1874 ms
+Simulation time: 1872 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-10
+Problem size N: 3125
+Should it be convergent based on A? false
+Spectral radius: 4.656569053287046
+
+Result: 
+Difference dropped below 1.000000e-10 after 116 iterations
+Total time: 1948 ms
+Simulation time: 1948 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-11
+Problem size N: 3125
+Should it be convergent based on A? false
+Spectral radius: 4.656569053287046
+
+Result: 
+Difference dropped below 1.000000e-11 after 141 iterations
+Total time: 2517 ms
+Simulation time: 2516 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-12
+Problem size N: 3125
+Should it be convergent based on A? false
+Spectral radius: 4.656569053287046
+
+Result: 
+Difference dropped below 1.000000e-12 after 144 iterations
+Total time: 2429 ms
+Simulation time: 2429 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-13
+Problem size N: 3125
+Should it be convergent based on A? false
+Spectral radius: 4.656569053287046
+
+Result: 
+Difference dropped below 1.000000e-13 after 156 iterations
+Total time: 2625 ms
+Simulation time: 2622 ms
+STARTING EXPERIMENT
+
+Stop criteria: Experiment stops when the euclidian norm between two subsequent iterations' effects drops below 1.000e-14
+Problem size N: 3125
+Should it be convergent based on A? false
+Spectral radius: 4.656569053287046
+
