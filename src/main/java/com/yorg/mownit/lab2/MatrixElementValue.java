@@ -42,7 +42,6 @@ public class MatrixElementValue {
         if(row == col) {
             result = k;
         } else {
-            // TODO: is N dimension of the matrix?
             result = ((double) m) / (N - row - col + 0.5);
         }
 

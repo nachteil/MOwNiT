@@ -1,4 +1,4 @@
-package com.yorg.mownit.lab2.math;
+package com.yorg.mownit.lab2.solvers;
 
 import lombok.Getter;
 import org.ejml.simple.SimpleMatrix;
@@ -6,23 +6,18 @@ import org.ejml.simple.SimpleMatrix;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by yorg on 25.03.15.
- */
-public class JacobiSolver {
+public abstract class Solver implements ISolver {
 
-    @Getter private SimpleMatrix A;
-    @Getter private SimpleMatrix b;
+    @Getter SimpleMatrix A;
+    @Getter SimpleMatrix b;
 
-    private SimpleMatrix M;
-    private SimpleMatrix N;
-    private SimpleMatrix L;
-    private SimpleMatrix D;
-    private SimpleMatrix U;
+    SimpleMatrix L;
+    SimpleMatrix D;
+    SimpleMatrix U;
 
     List<SimpleMatrix> cachedResults = new ArrayList<>(50);
 
-    public JacobiSolver(SimpleMatrix A, SimpleMatrix b) {
+    public Solver(SimpleMatrix A, SimpleMatrix b) {
 
         this.A = A;
         this.b = b;
@@ -35,8 +30,6 @@ public class JacobiSolver {
         initD();
         initU();
 
-        N = D.invert();
-        M = D.invert().mult(L.plus(U)).scale(-1.0d);
 
         insertResultZeroBase();
     }
@@ -51,20 +44,44 @@ public class JacobiSolver {
         cachedResults.add(x);
     }
 
-    public SimpleMatrix getResult(int numberOfIteration) {
+    @Override
+    public SimpleMatrix getResult(int numberOfIterations) {
 
-        if(numberOfIteration < 1) {
+        if(numberOfIterations < 1) {
             throw new IllegalArgumentException("Number of iterations must be greater than 0");
         }
 
-        if(numberOfIteration > cachedResults.size() - 1) {
-            for(int i = cachedResults.size(); i <= numberOfIteration; ++i) {
+        if(numberOfIterations > cachedResults.size() - 1) {
+            for(int i = cachedResults.size(); i <= numberOfIterations; ++i) {
                 SimpleMatrix previous = cachedResults.get(i - 1);
-                SimpleMatrix current = M.mult(previous).plus(N.mult(b));
+                SimpleMatrix current = getNextIterationMatrix(previous);
                 cachedResults.add(current);
             }
         }
-        return cachedResults.get(numberOfIteration);
+        return cachedResults.get(numberOfIterations);
+    }
+
+    public double getSpectralRadius() {
+        double result = calculateNormElement(0);
+        for(int i = 1; i < A.numCols(); ++i) {
+            double k = calculateNormElement(i);
+            result = k > result ? k : result;
+        }
+        return result;
+    }
+
+    public boolean isJacobiConvergent() {
+        return getSpectralRadius() < 1.0d;
+    }
+
+    abstract SimpleMatrix getNextIterationMatrix(SimpleMatrix previous);
+
+    private double calculateNormElement(int i) {
+        double sum = 0.0d;
+        for(int j = 0; j < A.numCols(); ++j) {
+            sum += (i == j) ? 0.0d : Math.abs(A.get(i,j));
+        }
+        return sum / Math.abs(A.get(i,i));
     }
 
     private void initD() {
@@ -102,5 +119,4 @@ public class JacobiSolver {
             }
         }
     }
-
 }

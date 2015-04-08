@@ -1,12 +1,10 @@
-package com.yorg.mownit.lab2;
+package com.yorg.mownit.lab2.utils;
 
+import com.yorg.mownit.lab2.Experiment;
 import com.yorg.mownit.lab2.math.VectorUtils;
 import lombok.Getter;
 import org.ejml.simple.SimpleMatrix;
 
-/**
- * Created by yorg on 25.03.15.
- */
 public class EuclidianNormBetweenIterationsCritter implements StopCritter {
 
     @Getter
@@ -28,6 +26,6 @@ public class EuclidianNormBetweenIterationsCritter implements StopCritter {
 
     @Override
     public String getDescription() {
-        return "Experiment stops when the euclidian norm between two subsequent iterations' effects drops below " + stopLimit;
+        return String.format("Experiment stops when the euclidian norm between two subsequent iterations' effects drops below %2.3e", stopLimit);
     }
 }

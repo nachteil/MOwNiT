@@ -1,6 +1,4 @@
-package com.yorg.mownit.lab2;
-
-import lombok.Getter;
+package com.yorg.mownit.lab2.utils;
 
 public class Timer {
 
@@ -10,8 +8,6 @@ public class Timer {
     private long lastSimulationResume;
     private long lastSimulationPause;
 
-    private long totalTime;
-    private long lastStop;
     private long endTime;
 
     boolean started = false;

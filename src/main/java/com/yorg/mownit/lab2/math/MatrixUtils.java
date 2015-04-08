@@ -19,7 +19,7 @@ public class MatrixUtils {
                     sum += Math.abs(A.get(i, j));
                 }
             }
-            if(a_ii <= sum) {
+            if(Math.abs(a_ii) <= sum) {
                 return false;
             }
         }

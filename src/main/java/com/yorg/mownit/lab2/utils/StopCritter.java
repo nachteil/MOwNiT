@@ -1,5 +1,6 @@
-package com.yorg.mownit.lab2;
+package com.yorg.mownit.lab2.utils;
 
+import com.yorg.mownit.lab2.Experiment;
 import org.ejml.simple.SimpleMatrix;
 
 /**

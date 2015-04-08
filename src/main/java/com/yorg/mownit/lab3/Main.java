@@ -40,7 +40,7 @@ public class Main {
         Function<Double> analyzedFunction = getFunction();
         ISolver solver = new SecantSolver(analyzedFunction);
 
-        Stopper stopperPrecission = (x1, x2, fVal, iterNum) -> Math.abs(fVal) < initialParams.getAcccuracy();
+        Stopper stopperPrecission = (x1, x2, fVal, iterNum) -> Math.abs(fVal) < initialParams.getAccuracy();
         Stopper stopperIterations = (x1, x2, fVal, iterNum) -> iterNum < initialParams.getMaxIterationCount();
 
         double start = initialParams.getCompartment().getStart();
@@ -49,7 +49,7 @@ public class Main {
         for(double new_end = end; new_end > start; new_end -= 0.1d) {
 
             Compartment compartment = new Compartment(start, new_end);
-            SolveParams p = new SolveParams(compartment, initialParams.getAcccuracy(), initialParams.getMaxIterationCount());
+            SolveParams p = new SolveParams(compartment, initialParams.getAccuracy(), initialParams.getMaxIterationCount());
 
             Result result = solver.solve(p, stopperPrecission);
             printResult(p, result);
@@ -59,7 +59,7 @@ public class Main {
     private static void printResult(SolveParams p, Result result) {
 
         System.out.println("Result: ");
-        System.out.println("Precission: " + p.getAcccuracy());
+        System.out.println("Precission: " + p.getAccuracy());
         System.out.println("Compartment: [" + p.getCompartment().getStart() + " : " + p.getCompartment().getEnd() + "]");
         System.out.println("Max iterations: " + p.getMaxIterationCount());
 

@@ -1,12 +1,11 @@
 package com.yorg.mownit.lab2;
 
-import com.yorg.mownit.lab2.math.JacobiSolver;
+import com.yorg.mownit.lab2.solvers.Solver;
+import com.yorg.mownit.lab2.utils.StopCritter;
+import com.yorg.mownit.lab2.utils.Timer;
 import lombok.Getter;
 import org.ejml.simple.SimpleMatrix;
 
-/**
- * Created by yorg on 25.03.15.
- */
 public class Experiment {
 
     public static final int MAX_ITERATIONS = 10000;
@@ -18,14 +17,16 @@ public class Experiment {
     private int iterationCount;
 
     private StopCritter stopCritter;
-    private JacobiSolver solver;
+    private Solver solver;
 
+    @Getter
     private SimpleMatrix A;
+    @Getter
     private SimpleMatrix b;
 
     private Timer timer;
 
-    public Experiment(JacobiSolver solver, StopCritter stopCritter) {
+    public Experiment(Solver solver, StopCritter stopCritter) {
 
         this.solver = solver;
         this.stopCritter = stopCritter;

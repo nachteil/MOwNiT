@@ -5,12 +5,9 @@ import com.yorg.mownit.lab3.utils.Result;
 import com.yorg.mownit.lab3.utils.SolveParams;
 import com.yorg.mownit.lab3.utils.Stopper;
 
-<<<<<<< HEAD
-public abstract class AbstractSolver {
 
-=======
 public abstract class AbstractSolver implements ISolver {
->>>>>>> 2fa125236316dcd7bdf131695d8fd2164d94a15f
+
     protected final Function<Double> function;
 
     public AbstractSolver(Function<Double> function) {
@@ -26,18 +23,11 @@ public abstract class AbstractSolver implements ISolver {
 
         int i = 0;
 
-<<<<<<< HEAD
-        while(i++ < params.getMaxIterationCount() && Math.abs(function.getValue(xNext)) > params.getAccuracy()) {
-            xNew = getNextApproximation(xPrevious, xNext);
-            xPrevious = xNext;
-            xNext = xNew;
-=======
         while(! stopper.shouldStop(xPrevious, xNext, function.getValue(xNext), i)) {
             xNew = getNextApproximation(xPrevious, xNext);
             xPrevious = xNext;
             xNext = xNew;
             ++i;
->>>>>>> 2fa125236316dcd7bdf131695d8fd2164d94a15f
         }
 
         Result result;

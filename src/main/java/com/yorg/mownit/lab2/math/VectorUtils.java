@@ -4,9 +4,6 @@ import org.ejml.simple.SimpleMatrix;
 
 import java.util.Random;
 
-/**
- * Created by yorg on 25.03.15.
- */
 public class VectorUtils {
 
     public static SimpleMatrix getRandomVactor(int N) {
