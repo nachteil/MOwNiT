@@ -1,25 +1,25 @@
-package com.yorg.mownit.lab1;
+package com.yorg.mownit.lab1.math;
 
 import java.util.Formatter;
 
-public class DoubleMatrix {
+public class FloatMatrix {
 
-    private final double [][] array;
+    private final float [][] array;
     private final int numCols;
     private final int numRows;
-    private static final double ZERO_LIMIT = 10e-6;
+    private static final float ZERO_LIMIT = 1e-6f;
 
-    public static DoubleMatrix multiply(DoubleMatrix a, DoubleMatrix b) {
+    public static FloatMatrix multiply(FloatMatrix a, FloatMatrix b) {
 
         if(a.getNumCols() != b.getNumRows()) {
             throw new IllegalArgumentException("");
         }
 
-        DoubleMatrix result = new DoubleMatrix(a.getNumRows(), b.getNumCols());
+        FloatMatrix result = new FloatMatrix(a.getNumRows(), b.getNumCols());
 
         for(int row = 0; row < a.getNumRows(); ++row) {
             for(int col = 0; col < b.getNumCols(); ++col) {
-                double value = 0.0;
+                float value = 0.0f;
                 for(int k = 0; k < a.getNumCols(); ++k) {
                     value += a.get(row, k) * b.get(k, col);
                 }
@@ -30,14 +30,14 @@ public class DoubleMatrix {
         return result;
     }
 
-    public DoubleMatrix(int rows, int cols) {
-        array = new double[rows][cols];
+    public FloatMatrix(int rows, int cols) {
+        array = new float[rows][cols];
         numCols = cols;
         numRows = rows;
     }
 
-    public DoubleMatrix(int n) {
-        array = new double [n][n];
+    public FloatMatrix(int n) {
+        array = new float [n][n];
         numCols = numRows = n;
     }
 
@@ -49,45 +49,29 @@ public class DoubleMatrix {
         return numRows;
     }
 
-    public void set(int row, int col, double value) {
+    public void set(int row, int col, float value) {
         array[row][col] = value;
     }
 
-    public double get(int row, int col) {
+    public float get(int row, int col) {
         return array[row][col];
     }
 
     public void performGaussianElimination() {
 
-        orderRowsByLeadingElements();
-//        System.out.println("After ordering:\n");
-//        System.out.println(this);
         transformToRowEchelonForm();
-//        System.out.println("After echelon:\n");
-//        System.out.println(this);
         reduceRowEchelonForm();
-//        System.out.println("After reduced echelon:\n");
-//        System.out.println(this);
     }
 
     private void reduceRowEchelonForm() {
         for(int i = 0; i < numRows; ++i) {
             for(int j = i-1; j >= 0; --j) {
-                if(!isDoubleingPointZero(array[j][i]) && !isDoubleingPointZero(array[i][i])) {
-                    double f = array[j][i] / array[i][i];
-                    /*if(Double.isNaN(f)) {
-                        System.out.println("NaN:\ni=" + i + ", j=" + j);
-                        System.out.println("array[j][i]=" + array[j][i] + ", " + "array[i][i]=" + array[i][i]);
-                        System.out.println(this);
-                    }*/
-//                    System.out.println("Not zero: " + array[i][i]);
+                if(!isFloatingPointZero(array[j][i]) && !isFloatingPointZero(array[i][i])) {
+                    float f = array[j][i] / array[i][i];
                     for(int k = i; k < numCols; ++k) {
                         array[j][k] -= f * array[i][k];
                     }
                 }
-                /*System.out.println("After loop:\ni=" + i + ", j=" + j);
-                System.out.println("array[j][i]=" + array[j][i] + ", " + "array[i][i]=" + array[i][i]);
-                System.out.println(this);*/
             }
         }
     }
@@ -95,7 +79,7 @@ public class DoubleMatrix {
     private void transformToRowEchelonForm() {
 
         for(int i = 0; i < numRows; ++i) {
-            normalizeByLeadingElement(i);
+            normalizeRowByLeadingElement(i);
             reduceRowsBelow(i);
         }
     }
@@ -105,7 +89,7 @@ public class DoubleMatrix {
         for(int k = i + 1; k < numRows; ++k) {
 
             if(array[k][i] != 0) {
-                double f = array[k][i];
+                float f = array[k][i];
                 for(int m = i; m < numCols; ++m) {
                     array[k][m] -= f * array[i][m];
                 }
@@ -113,9 +97,9 @@ public class DoubleMatrix {
         }
     }
 
-    private void normalizeByLeadingElement(int i) {
+    private void normalizeRowByLeadingElement(int i) {
 
-        double factor = array[i][i];
+        float factor = array[i][i];
 
         if(factor != 0) {
             for(int k = i; k < numCols; ++k) {
@@ -124,22 +108,10 @@ public class DoubleMatrix {
         }
     }
 
-    private void orderRowsByLeadingElements() {
-
-        for(int i = 0; i < numRows; ++i) {
-
-            int leadingElementsRowIndexForNthColumn = getLeadingElementsRowForNthColumn(i);
-            if(leadingElementsRowIndexForNthColumn != i) {
-                swapRows(i, leadingElementsRowIndexForNthColumn);
-            }
-        }
-
-    }
-
     private void swapRows(int m, int n) {
 
         for (int k = 0; k < numCols; ++k) {
-            double swapBuffer = array[m][k];
+            float swapBuffer = array[m][k];
             array[m][k] = array[n][k];
             array[n][k] = swapBuffer;
         }
@@ -176,7 +148,7 @@ public class DoubleMatrix {
         return buffer.toString();
     }
 
-    private boolean isDoubleingPointZero(double k) {
+    private boolean isFloatingPointZero(float k) {
         return Math.abs(k - 0.0f) < ZERO_LIMIT;
     }
 

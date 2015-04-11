@@ -1,5 +1,7 @@
-package com.yorg.mownit.lab1;
+package com.yorg.mownit.lab1.util;
 
+
+import com.yorg.mownit.lab1.math.FloatMatrix;
 
 public class FloatMatrixTest {
 
