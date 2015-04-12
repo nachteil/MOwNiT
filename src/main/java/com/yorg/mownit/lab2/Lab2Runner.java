@@ -1,5 +1,6 @@
 package com.yorg.mownit.lab2;
 
+import com.yorg.mownit.lab2.math.MatrixUtils;
 import com.yorg.mownit.lab2.math.VectorUtils;
 import com.yorg.mownit.lab2.solvers.JacobiSolver;
 import com.yorg.mownit.lab2.solvers.SORSolver;
@@ -9,10 +10,14 @@ import com.yorg.mownit.lab2.utils.EuclidianResultDeviation;
 import com.yorg.mownit.lab2.utils.StopCritter;
 import lombok.SneakyThrows;
 import org.ejml.simple.SimpleMatrix;
+
+import javax.annotation.processing.SupportedSourceVersion;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -32,23 +37,38 @@ public class Lab2Runner {
     private static synchronized int getNum() {return num;}
 
     private static PrintStream csvLog;
-    private synchronized static void logToCSV(String s) {
-        csvLog.println(s);
+    private synchronized static void logToCSV(Object ... obs) {
+        StringBuilder b = new StringBuilder();
+        for(Object o : obs) {
+            b.append(o).append(",");
+        }
+        b.setLength(b.length()-1);
+        csvLog.println(b.toString());
     }
 
     @SneakyThrows
     public static void main(String[] args) {
-        runJacobiPassages();
+        runConcurrentlyTwoMethodsComparison();
+    }
+
+    private static void calculateRadius() throws FileNotFoundException {
+        Lab2 lab = new Lab2(MatrixElementType.A);
+        PrintStream print = new PrintStream(new FileOutputStream("radius.csv"));
+        for(int N = 5; N < 1000; N += 10) {
+            print.println(N + "," + MatrixUtils.getIterationMatrixSpectralRadius(lab.getMatrix(N, m, k)));
+        }
     }
 
     @SneakyThrows
     private static void runConcurrentlyTwoMethodsComparison() {
-        csvLog = new PrintStream(new FileOutputStream("sor.csv"));
+
+        // diff between iterations
+        csvLog = new PrintStream(new FileOutputStream("sor_iterations.csv"));
 
         PrintStream oldOut = System.out;
         System.setOut(new PrintStream(new FileOutputStream("comparison_new.txt")));
 
-        ExecutorService executor = Executors.newFixedThreadPool(25);
+        ExecutorService executor = Executors.newFixedThreadPool(5);
         List<Runnable> runnables = new ArrayList<>();
 
         for(int N = 5; N < 1000; N *= 2) {
@@ -70,13 +90,40 @@ public class Lab2Runner {
         }
         executor.shutdown();
         executor.awaitTermination(1500, TimeUnit.SECONDS);
-        System.out.flush();
-        csvLog.flush();
+
+        // result diff
+        csvLog = new PrintStream(new FileOutputStream("sor_result_diff.csv"));
+
+        System.setOut(new PrintStream(new FileOutputStream("comparison_new.txt")));
+
+        executor = Executors.newFixedThreadPool(5);
+        runnables = new ArrayList<>();
+
+        for(int N = 5; N < 1000; N *= 2) {
+            for(double precission = 1e-3; precission > 1e-10; precission /= 100) {
+                final int _N = N;
+                final double _precission = precission;
+                Runnable r = () -> {
+                    StopCritter stop = new EuclidianResultDeviation(_precission);
+                    conductSORComparison(_N, _precission, stop);
+                    oldOut.println("Finished " + getCount() + " of " + getNum());
+                };
+                runnables.add(r);
+            }
+        }
+
+        num = runnables.size();
+        for(Runnable r : runnables) {
+            executor.execute(r);
+        }
+        executor.shutdown();
+        executor.awaitTermination(1500, TimeUnit.SECONDS);
     }
 
     @SneakyThrows
     private static void runJacobiPassages() {
 
+        PrintStream old = System.out;
         PrintStream outStream = new PrintStream(new FileOutputStream("jacobi_iteration_step.csv"));
         System.setOut(outStream);
 
@@ -85,6 +132,7 @@ public class Lab2Runner {
                 StopCritter stop = new EuclidianNormBetweenIterationsCritter(precission);
                 conductExperiment(N, precission, stop);
             }
+            old.println(N);
         }
 
         outStream = new PrintStream(new FileOutputStream("jacobi_result_diff.csv"));
@@ -95,6 +143,7 @@ public class Lab2Runner {
                 StopCritter stop = new EuclidianResultDeviation(precission);
                 conductExperiment(N, precission, stop);
             }
+            old.println(N);
         }
     }
 
@@ -113,7 +162,8 @@ public class Lab2Runner {
         experiment.start();
 
         if(experiment.getResult() != null) {
-            System.out.println(N + "," + r + "," + experiment.getIterationCount());
+            double distance = VectorUtils.euclidianNorm(experiment.getResult().minus(x));
+            System.out.println(N + "," + r + "," + experiment.getIterationCount() + "," + distance);
         } else {
             System.out.println("Experiment failed - the result was not convergent after " + Experiment.MAX_ITERATIONS + " iterations");
         }
@@ -160,9 +210,7 @@ public class Lab2Runner {
 
             if (sorSolverExperiment.getResult() != null) {
                 builder.append("\n   omega = " + omega + " -> " + sorSolverExperiment.getIterationCount() + " iterations");
-                StringBuilder csvBuilder = new StringBuilder();
-                csvBuilder.append(N).append(",").append(r).append(",").append(sorSolverExperiment.getIterationCount());
-                logToCSV(csvBuilder.toString());
+                logToCSV(N, r, omega, sorSolverExperiment.getIterationCount(), jacobiSolverExperiment.getIterationCount());
             } else {
                 builder.append("\nExperiment failed - the result was not convergent after " + Experiment.MAX_ITERATIONS + " iterations");
             }
