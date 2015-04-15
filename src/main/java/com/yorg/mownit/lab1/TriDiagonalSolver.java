@@ -2,6 +2,7 @@ package com.yorg.mownit.lab1;
 
 import com.yorg.mownit.lab1.math.DoubleMatrix;
 import com.yorg.mownit.lab1.math.FloatMatrix;
+import org.ejml.simple.SimpleMatrix;
 
 public class TriDiagonalSolver {
 
@@ -35,8 +36,8 @@ public class TriDiagonalSolver {
         }
         return result;
     }
-    
-    public DoubleMatrix solve(DoubleMatrix A, DoubleMatrix b) {
+
+    private SimpleMatrix generalSolve(MatrixValue A, MatrixValue b) {
 
         int n = A.getNumCols();
         double [] u = new double [n];
@@ -58,13 +59,83 @@ public class TriDiagonalSolver {
         }
 
         x[n-1] =  y[n-1] / u[n-1];
-        DoubleMatrix result = new DoubleMatrix(n, 1);
-        result.set(n-1, 0, x[n-1]);
+        SimpleMatrix delegate = new SimpleMatrix(n, 1);
+        delegate.set(n-1, 0, x[n-1]);
         for(int i = n-2; i >= 0; --i) {
             x[i] = (y[i] - A.get(i, i+1) * x[i+1]) / u[i];
-            result.set(i, 0, x[i]);
+            delegate.set(i, 0, x[i]);
         }
+        return delegate;
+    }
+
+    public DoubleMatrix solve(DoubleMatrix A, DoubleMatrix b) {
+
+        DoubleMatrix result = new DoubleMatrix(A.getNumRows(), 1);
+        MatrixValue aFacade = new MatrixValue() {
+            @Override
+            public double get(int row, int col) {
+                return A.get(row, col);
+            }
+
+            @Override
+            public int getNumCols() {
+                return A.getNumCols();
+            }
+        };
+
+        MatrixValue bFacade = new MatrixValue() {
+            @Override
+            public double get(int row, int col) {
+                return b.get(row, col);
+            }
+
+            @Override
+            public int getNumCols() {
+                return b.getNumCols();
+            }
+        };
+
+        SimpleMatrix solved = generalSolve(aFacade, bFacade);
+
+        for(int i = 0; i < A.getNumRows(); ++i) {
+            result.set(i, 0, solved.get(i, 0));
+        }
+
         return result;
+    }
+
+    public SimpleMatrix solve(SimpleMatrix A, SimpleMatrix b) {
+
+        MatrixValue aFacade = new MatrixValue() {
+            @Override
+            public double get(int row, int col) {
+                return A.get(row, col);
+            }
+
+            @Override
+            public int getNumCols() {
+                return A.numCols();
+            }
+        };
+
+        MatrixValue bFacade = new MatrixValue() {
+            @Override
+            public double get(int row, int col) {
+                return b.get(row, col);
+            }
+
+            @Override
+            public int getNumCols() {
+                return b.numCols();
+            }
+        };
+
+        return generalSolve(aFacade, bFacade);
+    }
+
+    public static interface MatrixValue {
+        double get(int row, int col);
+        int getNumCols();
     }
 
 }
