@@ -26,8 +26,8 @@ public class CubicInterpoler {
         }
 
         matrixA.set(0, 0, 2 * helper.h(0));
-        matrixA.set(0, 1, 2 * helper.h(0));
-        matrixA.set(1, 0, 2 * helper.h(0));
+        matrixA.set(0, 1, helper.h(0));
+        matrixA.set(1, 0, helper.h(0));
         matrixA.set(N, N, 2 * helper.h(N-1));
 
         for(int i = 1; i < N; ++i) {
@@ -36,6 +36,11 @@ public class CubicInterpoler {
 
         vectorB.set(0, 0, 3 * ((yValues[1] - yValues[0]) / helper.h(0) - derivativeAtStart));
         vectorB.set(N, 0, 3 * (derivativeAtEnd - ((yValues[N] - yValues[N - 1]) / helper.h(N-1))));
+
+
+        System.out.println(matrixA);
+        System.out.println("3 * ((" + yValues[1] + " - " + yValues[0] + ") / " + helper.h(0) + " - " + derivativeAtStart);
+        System.out.println(vectorB);
 
         TriDiagonalSolver solver = new TriDiagonalSolver();
         SimpleMatrix zVector = solver.solve(matrixA, vectorB);
@@ -104,7 +109,6 @@ public class CubicInterpoler {
                 double A = (zi1 - zi)/(6.0 * helper.h(interval));
                 double B = zi / 2.0;
                 double C = -(helper.h(interval) * zi1 / 6.0) - helper.h(interval) * zi / 3.0 + (yValues[interval+1] - yValues[interval])/helper.h(interval);
-
                 return yValues[interval] + (x-xValues[interval]) * (C + (x - xValues[interval]) * (B + (x - xValues[interval]) * A));
             }
         };
@@ -119,8 +123,6 @@ public class CubicInterpoler {
 
         int i = 0;
         while(!(x >= xValues[i] && x <= xValues[i+1])) ++i;
-
-        System.out.println(xValues[i] + " < " + x + " < " + xValues[i+1]);
 
         return i;
 

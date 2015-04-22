@@ -6,7 +6,6 @@ set grid
 set xlabel "x"
 set ylabel "y"
 
-set yrange[-2:2]
-
 set output "test.png"
-plot "spline.csv" u 1:2 with points title "interpol"
+plot "spline.csv" u 1:2 with linespoints title "interpol",\
+     "spline.csv" u 1:3 with linespoints title "orig"
