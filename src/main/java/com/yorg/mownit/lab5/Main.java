@@ -1,8 +1,9 @@
 package com.yorg.mownit.lab5;
 
+import com.yorg.mownit.commons.Function;
 import com.yorg.mownit.lab5.interpolation.CubicInterpoler;
+import org.ejml.simple.SimpleMatrix;
 
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -27,6 +28,7 @@ public class Main {
             csvWriter.println(p + "," + inter.getValue(p));
         }
         csvWriter.flush();
+        SimpleMatrix a = new SimpleMatrix();
 
     }
 
