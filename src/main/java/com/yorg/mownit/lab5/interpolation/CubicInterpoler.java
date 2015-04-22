@@ -1,7 +1,7 @@
 package com.yorg.mownit.lab5.interpolation;
 
 import com.yorg.mownit.lab1.TriDiagonalSolver;
-import com.yorg.mownit.lab5.Function;
+import com.yorg.mownit.commons.Function;
 import org.ejml.simple.SimpleMatrix;
 
 public class CubicInterpoler {
