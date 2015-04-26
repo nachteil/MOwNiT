@@ -24,12 +24,12 @@ public class PlotWindow extends JFrame{
             @Override
             public void paintComponent(Graphics g) {
                 g.drawImage(image, 0, 0, null);
-                repaint();
             }
         };
         panel.setSize(800, 600);
 
         this.setContentPane(panel);
+        this.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
 
         this.setVisible(true);
     }

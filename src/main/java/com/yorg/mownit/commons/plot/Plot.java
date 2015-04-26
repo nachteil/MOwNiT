@@ -23,7 +23,7 @@ public class Plot {
     }
 
     @SneakyThrows
-    public String plot() {
+    public void plot() {
 
         String gnuplotFileContent = new GnuplotHelper(this, "out.png").getGnuplotInput(800, 600);
 
@@ -36,8 +36,6 @@ public class Plot {
         System.out.println("Plot status: " + p.waitFor());
 
         new PlotWindow();
-
-        return "Dupa";
     }
 
     public Range getXrange() {
@@ -100,6 +98,10 @@ public class Plot {
         public PlotBuilder withXRange(double start, double end) {
             plotInstance.xrange = new Range(start, end);
             return this;
+        }
+
+        public PlotBuilder withXRange(Range range) {
+            return withXRange(range.start, range.end);
         }
 
         public PlotBuilder withYRange(double start, double end) {

@@ -109,7 +109,8 @@ public class GnuplotHelper {
                     .append("\" ")
                     .append("u 1:2 ")
                     .append("with ")
-                    .append(plot.getType().toString())
+                    .append("lines")
+//                    .append(plot.getType().toString())
                     .append(" title \"")
                     .append(data.getDescription())
                     .append("\", \\");

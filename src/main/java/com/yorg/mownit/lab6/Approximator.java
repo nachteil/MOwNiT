@@ -1,13 +1,14 @@
 package com.yorg.mownit.lab6;
 
+import com.yorg.mownit.commons.Function;
 import com.yorg.mownit.commons.Point2D;
 import com.yorg.mownit.lab1.math.DoubleMatrix;
-import com.yorg.mownit.lab4.polynomial.Function;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.ejml.simple.SimpleMatrix;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @AllArgsConstructor
@@ -18,6 +19,10 @@ public class Approximator {
 
     private final Map<Integer, Double> sMap = new HashMap<>();
     private final Map<Integer, Double> tMap = new HashMap<>();
+
+    public Approximator(List<Point2D> point2DList, int approximationOrder) {
+        this(point2DList.toArray(new Point2D [point2DList.size()]), approximationOrder);
+    }
 
     public Function discretePolynomialApproximation() {
 
