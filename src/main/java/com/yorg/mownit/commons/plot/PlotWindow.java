@@ -11,15 +11,15 @@ import java.io.FileInputStream;
 public class PlotWindow extends JFrame{
 
     @SneakyThrows
-    PlotWindow() {
+    PlotWindow(String plotFileName) {
 
         super("Chart");
 
-        setSize(800, 600);
+        setSize(1000, 900);
 
         JPanel panel = new JPanel() {
 
-            BufferedImage image = ImageIO.read(new FileInputStream("out.png"));
+            BufferedImage image = ImageIO.read(new FileInputStream(plotFileName));
 
             @Override
             public void paintComponent(Graphics g) {
@@ -29,7 +29,7 @@ public class PlotWindow extends JFrame{
         panel.setSize(800, 600);
 
         this.setContentPane(panel);
-        this.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         this.setVisible(true);
     }

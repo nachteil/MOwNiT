@@ -1,5 +1,6 @@
 package com.yorg.mownit.lab3.math;
 
+import com.yorg.mownit.commons.Function;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Polynomial implements Function<Double> {
+public class Polynomial implements Function {
 
     private List<PolynomialElement> elements;
 
@@ -51,7 +52,7 @@ public class Polynomial implements Function<Double> {
     }
 
     @Override
-    public Double getValue(double x) {
+    public double getValue(double x) {
 
         double sum = 0.0d;
         for(PolynomialElement e : elements) {

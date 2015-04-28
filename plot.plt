@@ -1,19 +1,16 @@
-set title "Comparison based on different \polynomial degree\nNumber of approximation points: 25" font ",20"
+set title "Interpolation for n = 50" font ",20"
 set datafile separator ","
 set grid
-set yrange [-3.0:2.0]
-set xrange [0.3333333333333333:3.0]
+set xrange [0.0:3.5]
 set xlabel "x"
 set ylabel "y"
-set output "out.png"
+set output "lab4_ex1_n50_chebyschev.png"
 
 
-set term png enhanced size 800,600
+set term png enhanced size 1000,800
 
 
-plot "data-file-CXEwJbnzeszgnLC.csv" u 1:2 with lines title "Original function", \
-"data-file-K11uzfyWXJyaNIH.csv" u 1:2 with lines title "N = 1", \
-"data-file-oVFujSdmZiz6QSb.csv" u 1:2 with lines title "N = 9", \
-"data-file-JTCqiYlac9H4Iu4.csv" u 1:2 with lines title "N = 17", \
-"data-file-jWHo4c0nUb9mfzq.csv" u 1:2 with lines title "N = 25"
+plot "datafile-sWdIOrIv6W4gxTA.csv" u 1:2with lines title "Original function", \
+"datafile-DA4pI9Bv2DQ2MCy.csv" u 1:2with lines title "Interpolation on Chebyschev nodes", \
+"datafile-FO6J82LQlCG0C3o.csv" u 1:2with points title "Chebyschev interpolation nodes"
 

@@ -1,21 +1,10 @@
-package com.yorg.mownit.lab2.math;
+package com.yorg.mownit.commons;
 
 import org.ejml.simple.SimpleMatrix;
 
 import java.util.Random;
 
 public class VectorUtils {
-
-    public static SimpleMatrix getRandomVactor(int N) {
-        Random random = new Random();
-        SimpleMatrix vector = new SimpleMatrix(N, 1);
-        for(int i = 0; i < N; ++i) {
-            vector.set(i, 0, random.nextDouble() > 0.5d ? -1.0 : 1.0);
-        }
-
-        return vector;
-    }
-
 
     public static double euclidianNorm(SimpleMatrix vector) {
 
@@ -29,4 +18,19 @@ public class VectorUtils {
         }
         return Math.sqrt(sum);
     }
+
+    public static double euclidianDiff(SimpleMatrix a, SimpleMatrix b) {
+        return euclidianNorm(a.minus(b));
+    }
+
+    public static SimpleMatrix getRandomVactor(int N) {
+        Random random = new Random();
+        SimpleMatrix vector = new SimpleMatrix(N, 1);
+        for(int i = 0; i < N; ++i) {
+            vector.set(i, 0, random.nextDouble() > 0.5d ? -1.0 : 1.0);
+        }
+
+        return vector;
+    }
+
 }
