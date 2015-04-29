@@ -31,7 +31,7 @@ public class Main {
     private static Properties properties = null;
 
     public static void main(String ... args) throws FileNotFoundException {
-        runMultidimensionalSolveAnalisys();
+        performSecantMethod();
     }
 
     private static void runMultidimensionalSolveAnalisys() throws FileNotFoundException {
@@ -183,7 +183,6 @@ public class Main {
                 SolveParams p = new SolveParams(range, initialParams.getAccuracy(), initialParams.getMaxIterationCount(), startPoint, 0.0);
 
                 Result result = solver.solve(p, stopperVal);
-//                printResult(p, result);
                 points.add(new Point2D(startPoint, result.getNumIterations()));
             }
             series.addData(points.toArray(new Point2D[points.size()]));
@@ -253,7 +252,7 @@ public class Main {
 
         Plot plot = Plot.newPlot()
                 .withPlotFileName("lab3_ex1_sec_iter_diff_v_b.png")
-                .withTitle("Secant method in [0.1 ; 2.1]\\n|f(x^{(i)})| < R\\nStarting from variable point and 2.1")
+                .withTitle("Secant method in [0.1 ; 2.1]\\n|x^{(i+1)} - x^{(i)}| < R\\nStarting from variable point and 2.1")
                 .withYRange(0, 40)
                 .withXLabel("Variable starting point")
                 .withYLabel("Number of iterations")
@@ -294,7 +293,7 @@ public class Main {
 
         Plot plot = Plot.newPlot()
                 .withPlotFileName("lab3_ex1_sec_abs_val_a_v.png")
-                .withTitle("Secant method in [0.1 ; 2.1]\\n|f(x^{(i)})| < R\\nStarting from variable point and 2.1")
+                .withTitle("Secant method in [0.1 ; 2.1]\\n|f(x^{(i)})| < R\\nStarting from 0.1 and variable point")
                 .withYRange(0, 40)
                 .withXLabel("Variable starting point")
                 .withYLabel("Number of iterations")
