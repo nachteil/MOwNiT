@@ -11,9 +11,9 @@ set output "out.png"
 set term png enhanced size 800,600
 
 
-plot "data-file-CXEwJbnzeszgnLC.csv" u 1:2 with lines title "Original function", \
-"data-file-K11uzfyWXJyaNIH.csv" u 1:2 with lines title "N = 1", \
-"data-file-oVFujSdmZiz6QSb.csv" u 1:2 with lines title "N = 9", \
-"data-file-JTCqiYlac9H4Iu4.csv" u 1:2 with lines title "N = 17", \
-"data-file-jWHo4c0nUb9mfzq.csv" u 1:2 with lines title "N = 25"
+plot "data-file-fWWSi78TWOm5Dv7.csv" u 1:2 with lines title "Original function", \
+"data-file-eQPEEbO5qaUHifR.csv" u 1:2 with lines title "N = 1", \
+"data-file-nTx5oWYfKZkvfWD.csv" u 1:2 with lines title "N = 9", \
+"data-file-P2zojm1jeXGPwLZ.csv" u 1:2 with lines title "N = 17", \
+"data-file-vhN0L5GM8NFxVIO.csv" u 1:2 with lines title "N = 25"
 
