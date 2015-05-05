@@ -1,19 +1,20 @@
-set title "Comparison based on different \polynomial degree\nNumber of approximation points: 25" font ",20"
+set title "Relative error of f(x) = x sin(3 PI / x) integral\nin [1/3;3] (Gauss-Legrande integration)" font ",20"
 set datafile separator ","
 set grid
-set yrange [-3.0:2.0]
-set xrange [0.3333333333333333:3.0]
-set xlabel "x"
-set ylabel "y"
-set output "out.png"
+set xrange [0.1:1000.0]
+set xlabel "Number of intervals"
+set ylabel "Relative error [%]"
+set output "gauss-cotes.png"
+set logscale x
+set logscale y
 
 
-set term png enhanced size 800,600
+set term png enhanced size 1000,800
 
 
-plot "data-file-fWWSi78TWOm5Dv7.csv" u 1:2 with lines title "Original function", \
-"data-file-eQPEEbO5qaUHifR.csv" u 1:2 with lines title "N = 1", \
-"data-file-nTx5oWYfKZkvfWD.csv" u 1:2 with lines title "N = 9", \
-"data-file-P2zojm1jeXGPwLZ.csv" u 1:2 with lines title "N = 17", \
-"data-file-vhN0L5GM8NFxVIO.csv" u 1:2 with lines title "N = 25"
+plot "datafile-eoDKrTjt0vn8wfX.csv" u 1:($2+0.0) with linespoints title "Quadrature degree: 0", \
+"datafile-SRqKLA8z5VERITJ.csv" u 1:($2+0.1) with linespoints title "Quadrature degree: 1", \
+"datafile-EIegeiwuzfsnDGP.csv" u 1:($2+0.2) with linespoints title "Quadrature degree: 2", \
+"datafile-eLt4RL4W1buictP.csv" u 1:($2+0.30000000000000004) with linespoints title "Quadrature degree: 3", \
+"datafile-7RlKhZN7WnhcbrN.csv" u 1:($2+0.4) with linespoints title "Quadrature degree: 4"
 

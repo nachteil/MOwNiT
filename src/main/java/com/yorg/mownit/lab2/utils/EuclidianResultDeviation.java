@@ -1,7 +1,7 @@
 package com.yorg.mownit.lab2.utils;
 
 import com.yorg.mownit.lab2.Experiment;
-import com.yorg.mownit.lab2.math.VectorUtils;
+import com.yorg.mownit.commons.VectorUtils;
 import org.ejml.simple.SimpleMatrix;
 
 public class EuclidianResultDeviation implements StopCritter {

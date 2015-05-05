@@ -1,5 +1,6 @@
 package com.yorg.mownit.lab4.polynomial;
 
+import com.yorg.mownit.commons.Function;
 import lombok.Setter;
 
 import java.util.ArrayList;

@@ -1,6 +1,7 @@
 package com.yorg.mownit.commons.plot;
 
 import com.yorg.mownit.commons.Point2D;
+import com.yorg.mownit.commons.RandomFileName;
 import lombok.SneakyThrows;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.lang.StringUtils;
@@ -9,7 +10,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 public class GnuplotHelper {
 
@@ -19,7 +23,6 @@ public class GnuplotHelper {
 
     private String outputFileName;
 
-    private static String chars = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
 
     private final Plot plot;
 
@@ -58,12 +61,14 @@ public class GnuplotHelper {
         headerBuilder.append("set datafile separator \",\"\n");
 
         headerBuilder.append("set grid\n");
-        headerBuilder
+        if(plot.getYrange() != null) {
+            headerBuilder
                 .append("set yrange [")
                 .append(plot.getYrange().start)
                 .append(":")
                 .append(plot.getYrange().end)
                 .append("]\n");
+        }
         headerBuilder
                 .append("set xrange [")
                 .append(plot.getXrange().start)
@@ -85,6 +90,14 @@ public class GnuplotHelper {
                 .append(outputFileName)
                 .append("\"\n");
 
+        if(plot.isLogscalex()) {
+            headerBuilder.append("set logscale x\n");
+        }
+
+        if(plot.isLogscaley()) {
+            headerBuilder.append("set logscale y\n");
+        }
+
         return headerBuilder.toString();
     }
 
@@ -100,23 +113,23 @@ public class GnuplotHelper {
         for(int i = 0; i < series.size(); ++i) {
 
             StringBuilder entryBuilder = new StringBuilder();
-            String randomPrefix = RandomStringUtils.random(15, chars);
             DataSeries data = series.get(i);
-            String fname = createDataFile(randomPrefix, data);
+            String fname = RandomFileName.getRandomFileName("datafile", "csv");
+            createDataFile(fname, data);
 
             entryBuilder.append("\"")
                     .append(fname)
                     .append("\" ")
-                    .append("u 1:2 ")
+                    .append("u 1:($2+" + 0.1 * i + ") ")
+//                    .append("u 1:2")
                     .append("with ")
-                    .append("lines")
-//                    .append(plot.getType().toString())
+                    .append(data.getType().toString())
                     .append(" title \"")
                     .append(data.getDescription())
                     .append("\", \\");
 
             String entryLine = entryBuilder.toString();
-            dataBuilder.append(entryBuilder).append("\n");
+            dataBuilder.append(entryLine).append("\n");
         }
 
         // remove newline, slash, space and comma
@@ -126,17 +139,17 @@ public class GnuplotHelper {
     }
 
     @SneakyThrows
-    private String createDataFile(String prefix, DataSeries series) {
+    private void createDataFile(String dataFileName, DataSeries series) {
 
-        String fname = "data-file-".concat(prefix).concat(".csv");
-        PrintWriter writer = new PrintWriter(new FileOutputStream(fname));
+        File file = new File(dataFileName);
+        file.deleteOnExit();
+
+        PrintWriter writer = new PrintWriter(new FileOutputStream(file));
 
         for(Point2D p : series.getPoints()) {
             writer.println(p.getX() + "," + p.getY());
         }
         writer.flush();
-
-        return fname;
     }
 
 }

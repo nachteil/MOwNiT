@@ -20,8 +20,11 @@ public interface Result {
         @Getter @Setter private int numIterations;
         @Getter @Setter public double lastXDiff;
 
-        public CorrectResult(double result) {
+        public CorrectResult(double result, double lastFunctionValue, int numIterations, double lastXDiff) {
             this.result = result;
+            this.lastFunctionValue = lastFunctionValue;
+            this.numIterations = numIterations;
+            this.lastXDiff = lastXDiff;
         }
 
         @Override

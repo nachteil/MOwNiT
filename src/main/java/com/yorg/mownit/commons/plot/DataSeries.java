@@ -1,6 +1,7 @@
 package com.yorg.mownit.commons.plot;
 
 import com.yorg.mownit.commons.Point2D;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,11 +9,13 @@ import java.util.List;
 
 public class DataSeries {
 
-    public final List<Point2D> points;
-    public final String description;
+    @Getter public final List<Point2D> points;
+    @Getter public final String description;
+    @Getter private final PlotType type;
 
-    DataSeries(String description) {
+    DataSeries(String description, PlotType type) {
         this.description = description;
+        this.type = type;
         points = new ArrayList<>();
     }
 
@@ -20,11 +23,5 @@ public class DataSeries {
         Collections.addAll(points, point2Ds);
     }
 
-    List<Point2D> getPoints() {
-        return points;
-    }
 
-    String getDescription() {
-        return description;
-    }
 }

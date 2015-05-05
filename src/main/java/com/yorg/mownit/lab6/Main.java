@@ -1,17 +1,17 @@
 package com.yorg.mownit.lab6;
 
-import com.yorg.mownit.commons.Function;
-import com.yorg.mownit.commons.Point2D;
-import com.yorg.mownit.commons.PointsSource;
-import com.yorg.mownit.commons.Range;
+import com.yorg.mownit.commons.*;
+import com.yorg.mownit.commons.datasources.PointSource;
+import com.yorg.mownit.commons.datasources.RegularSource;
 import com.yorg.mownit.commons.plot.DataSeries;
 import com.yorg.mownit.commons.plot.Plot;
+import com.yorg.mownit.commons.plot.PlotType;
 
 public class Main {
 
     public static final Function myFunction = x -> x * Math.sin(3.0 * Math.PI / x);
     public static final Range myRange = new Range(1.0/3.0, 3.0);
-    public static final PointsSource source = new PointsSource(myRange);
+    public static final PointSource source = new RegularSource(myRange);
 
     public static void main(String[] args) {
 
@@ -24,7 +24,6 @@ public class Main {
 
         Plot plot = Plot.newPlot()
                 .withTitle("Comparison based on different \\number of approximation points\\nPolynomial degree: " + approxDegree)
-                .withType(Plot.Type.LINESPOINTS)
                 .withXLabel("x")
                 .withYLabel("y")
                 .withXRange(myRange)
@@ -32,13 +31,13 @@ public class Main {
                 .build();
 
         Point2D [] originalPoints = source.getFunctionValues(myFunction, 200);
-        DataSeries originalDataSeries = plot.newDataSeries("Original function");
+        DataSeries originalDataSeries = plot.newDataSeries("Original function", PlotType.LINES);
         originalDataSeries.addData(originalPoints);
 
         Approximator approximator;
 
         for(int numOfPoints = approxDegree; numOfPoints <= 20; numOfPoints += 5) {
-            DataSeries series = plot.newDataSeries(String.format("N = %d", numOfPoints));
+            DataSeries series = plot.newDataSeries(String.format("N = %d", numOfPoints), PlotType.LINES);
 
             Point2D [] pointsToApproximateFrom = source.getFunctionValues(myFunction, numOfPoints);
             approximator = new Approximator(pointsToApproximateFrom, approxDegree);
@@ -54,7 +53,6 @@ public class Main {
 
         Plot plot = Plot.newPlot()
                 .withTitle("Comparison based on different \\polynomial degree\\nNumber of approximation points: " + numOfPoints)
-                .withType(Plot.Type.LINESPOINTS)
                 .withXLabel("x")
                 .withYLabel("y")
                 .withXRange(myRange)
@@ -62,13 +60,13 @@ public class Main {
                 .build();
 
         Point2D [] originalPoints = source.getFunctionValues(myFunction, 200);
-        DataSeries originalDataSeries = plot.newDataSeries("Original function");
+        DataSeries originalDataSeries = plot.newDataSeries("Original function", PlotType.LINES);
         originalDataSeries.addData(originalPoints);
 
         Approximator approximator;
 
         for(int approximationOrder = 1; approximationOrder <= numOfPoints; approximationOrder += 8) {
-            DataSeries series = plot.newDataSeries(String.format("N = %d", approximationOrder));
+            DataSeries series = plot.newDataSeries(String.format("N = %d", approximationOrder), PlotType.LINES);
 
             Point2D [] pointsToApproximateFrom = source.getFunctionValues(myFunction, numOfPoints);
             approximator = new Approximator(pointsToApproximateFrom, approximationOrder);

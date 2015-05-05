@@ -1,10 +1,11 @@
 package com.yorg.mownit.lab3.solvers;
 
-import com.yorg.mownit.lab3.math.Function;
+
+import com.yorg.mownit.commons.Function;
 
 public class SecantSolver extends AbstractSolver {
 
-    public SecantSolver(Function<Double> function) {
+    public SecantSolver(Function function) {
         super(function);
     }
 

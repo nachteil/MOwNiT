@@ -1,13 +1,13 @@
 package com.yorg.mownit.lab4.interpolation;
 
-import com.yorg.mownit.lab4._2d.Point;
+import com.yorg.mownit.commons.Point2D;
 import com.yorg.mownit.lab4.polynomial.Polynomial;
 import com.yorg.mownit.lab4.polynomial.PolynomialBase;
 
 public class LagrangeInterpolator implements Interpolator {
 
     @Override
-    public Polynomial getInterpolationPolynomial(Point... points) {
+    public Polynomial getInterpolationPolynomial(Point2D... points) {
         int n = points.length - 1;
         Polynomial [] sumElements = new Polynomial[n+1];
         for(int i = 0; i <= n; ++i) {
@@ -17,7 +17,7 @@ public class LagrangeInterpolator implements Interpolator {
         return Polynomial.sum(sumElements);
     }
 
-    private Polynomial getProduct(int i, Point[] points) {
+    private Polynomial getProduct(int i, Point2D[] points) {
 
         int n = points.length - 1;
         Polynomial [] factors = new Polynomial[n];

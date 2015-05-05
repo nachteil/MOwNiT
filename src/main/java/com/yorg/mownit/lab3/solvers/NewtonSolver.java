@@ -1,26 +1,20 @@
 package com.yorg.mownit.lab3.solvers;
 
-import com.yorg.mownit.lab3.math.Function;
+import com.yorg.mownit.commons.Function;
 import com.yorg.mownit.lab3.math.Polynomial;
 
 public class NewtonSolver extends AbstractSolver {
 
-    private final Polynomial polynomialFuntion;
-    private final Polynomial derivative;
+    private final Function derivative;
 
-    public NewtonSolver(Function<Double> function) {
+    public NewtonSolver(Function function, Function derivative) {
 
         super(function);
-
-        if(! (function instanceof Polynomial)) {
-            throw new IllegalArgumentException("Function must be a polynomial for this solver");
-        }
-        this.polynomialFuntion = (Polynomial) function;
-        this.derivative = polynomialFuntion.getFirstDerivative();
+        this.derivative = derivative;
     }
 
     @Override
     protected double getNextApproximation(double xNext, double xPrevious) {
-        return xNext - polynomialFuntion.getValue(xNext) / derivative.getValue(xNext);
+        return xNext - function.getValue(xNext) / derivative.getValue(xNext);
     }
 }

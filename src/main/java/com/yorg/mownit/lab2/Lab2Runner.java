@@ -1,7 +1,7 @@
 package com.yorg.mownit.lab2;
 
 import com.yorg.mownit.lab2.math.MatrixUtils;
-import com.yorg.mownit.lab2.math.VectorUtils;
+import com.yorg.mownit.commons.VectorUtils;
 import com.yorg.mownit.lab2.solvers.JacobiSolver;
 import com.yorg.mownit.lab2.solvers.SORSolver;
 import com.yorg.mownit.lab2.solvers.Solver;
