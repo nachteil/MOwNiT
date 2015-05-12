@@ -8,7 +8,7 @@ import lombok.Getter;
 public abstract class AbstractIntegrator {
 
     @Getter
-    protected static final double integrationStep = 1e-6;
+//    protected static final double integrationStep = 1e-6;
     protected final int degree;
 
     public AbstractIntegrator(int degree) {
@@ -17,9 +17,9 @@ public abstract class AbstractIntegrator {
 
     protected abstract Quadrature getQuadrature();
 
-    public double integrate(Function f, Range range) {
+    public double integrate(Function f, Range range, int numberOfIntervals) {
 
-        int numberOfSteps = (int) ((range.end - range.start) / integrationStep);
+//        int numberOfSteps = (int) ((range.end - range.start) / integrationStep);
         Quadrature quadrature = getQuadrature();
 
         double currentIntervalStart;
@@ -28,13 +28,15 @@ public abstract class AbstractIntegrator {
 
         double integrateSumValue = 0.0;
 
+        double intervalWidth = (range.end - range.start) / numberOfIntervals;
+
         Timer timer = new Timer();
         timer.start();
 
-        for(int i = 0; i < numberOfSteps; ++i) {
+        for(int i = 0; i < numberOfIntervals; ++i) {
 
-            currentIntervalStart = range.start + i * integrationStep;
-            currentIntervalEnd = currentIntervalStart + integrationStep;
+            currentIntervalStart = range.start + i * intervalWidth;
+            currentIntervalEnd = currentIntervalStart + intervalWidth;
 
             subInterval = (currentIntervalEnd - currentIntervalStart) / (degree);
             double [] quadratureValues = new double[degree+1];
@@ -45,7 +47,7 @@ public abstract class AbstractIntegrator {
             integrateSumValue += quadrature.getValue(currentIntervalStart, currentIntervalEnd, f, quadratureValues);
         }
 
-        System.out.println("Integration took " + timer.stopAndGet() + " ms");
+//        System.out.println("Integration took " + timer.stopAndGet() + " ms");
 
         return integrateSumValue;
     }

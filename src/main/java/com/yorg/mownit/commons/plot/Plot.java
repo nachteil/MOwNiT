@@ -25,10 +25,19 @@ public class Plot {
     @Getter private String title;
     @Getter private String outFileName = null;
 
+    @Getter private boolean logscalex;
+    @Getter private boolean logscaley;
+
     List<DataSeries> dataSeries;
 
-    protected Plot() {
+    protected Plot(boolean logscalex, boolean logscaley) {
+        this.logscalex = logscalex;
+        this.logscaley = logscaley;
         dataSeries = new ArrayList<>();
+    }
+
+    protected Plot() {
+        this(false, false);
     }
 
     @SneakyThrows
@@ -74,21 +83,24 @@ public class Plot {
 
     public void addPointsPlot(Point2D [] points, String description) {
 
-        DataSeries pointsSeries = this.newDataSeries(description, PlotType.POINTS);
+        DataSeries pointsSeries = this.newDataSeries(description, PlotType.LINESPOINTS);
         pointsSeries.addData(points);
 
     }
 
     public static PlotBuilder newPlot() {
-        return new PlotBuilder();
+        return new PlotBuilder(false, false);
+    }
+    public static PlotBuilder newPlot(boolean logscalex, boolean logscaley) {
+        return new PlotBuilder(logscalex, logscaley);
     }
 
     public static class PlotBuilder {
 
         private Plot plotInstance;
 
-        private PlotBuilder() {
-            plotInstance = new Plot();
+        private PlotBuilder(boolean logscalex, boolean logscaley) {
+            plotInstance = new Plot(logscalex, logscaley);
         }
 
         public PlotBuilder withXRange(double start, double end) {

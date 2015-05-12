@@ -90,6 +90,14 @@ public class GnuplotHelper {
                 .append(outputFileName)
                 .append("\"\n");
 
+        if(plot.isLogscalex()) {
+            headerBuilder.append("set logscale x\n");
+        }
+
+        if(plot.isLogscaley()) {
+            headerBuilder.append("set logscale y\n");
+        }
+
         return headerBuilder.toString();
     }
 
@@ -112,8 +120,8 @@ public class GnuplotHelper {
             entryBuilder.append("\"")
                     .append(fname)
                     .append("\" ")
-                    .append("u 1:($2+" + 0.1 * i + ") ")
-//                    .append("u 1:2")
+//                    .append("u 1:($2+" + 0.1 * i + ") ")
+                    .append("u 1:2")
                     .append("with ")
                     .append(data.getType().toString())
                     .append(" title \"")
