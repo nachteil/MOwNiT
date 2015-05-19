@@ -68,7 +68,7 @@ public class Lab7Main {
             System.out.println("Finished for " + numOfIntervals + " intervals");
         }
 
-        newtonPlot.plot();
+        newtonPlot.plotWithWindow();
 
         // gauss
         series = new DataSeries[5];
@@ -91,7 +91,7 @@ public class Lab7Main {
             System.out.println("Finished for " + numOfIntervals + " intervals");
         }
 
-        gaussPlot.plot();
+        gaussPlot.plotWithWindow();
     }
 
     public static void main(String[] args) {

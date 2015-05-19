@@ -10,7 +10,6 @@ import com.yorg.mownit.lab3.solvers.ISolver;
 import com.yorg.mownit.lab3.solvers.NewtonSolver;
 import com.yorg.mownit.lab3.solvers.SecantSolver;
 import com.yorg.mownit.lab3.systems.MultidimensionalSolver;
-import com.yorg.mownit.lab3.systems.MyFunction;
 import com.yorg.mownit.lab3.utils.Result;
 import com.yorg.mownit.lab3.utils.SolveParams;
 import com.yorg.mownit.lab3.utils.Stopper;
@@ -114,7 +113,7 @@ public class Main {
         PointSource source = new RegularSource(xrange);
         Point2D[] functionValues = source.getFunctionValues(function, 100);
         series.addData(functionValues);
-        plot.plot();
+        plot.plotWithWindow();
 
     }
 
@@ -159,7 +158,7 @@ public class Main {
             series.addData(points.toArray(new Point2D[points.size()]));
         }
 
-        plot.plot();
+        plot.plotWithWindow();
 
         Plot plot1 = Plot.newPlot()
                 .withPlotFileName("lab3_ex1_abs_val.png")
@@ -188,7 +187,7 @@ public class Main {
             series.addData(points.toArray(new Point2D[points.size()]));
         }
 
-        plot1.plot();
+        plot1.plotWithWindow();
 
     }
 
@@ -237,7 +236,7 @@ public class Main {
             series.addData(points.toArray(new Point2D[points.size()]));
         }
 
-        plot.plot();
+        plot.plotWithWindow();
     }
 
     private static void performSecantFromVarToBIterDiff() {
@@ -277,7 +276,7 @@ public class Main {
             series.addData(points.toArray(new Point2D[points.size()]));
         }
 
-        plot.plot();
+        plot.plotWithWindow();
 
     }
 
@@ -318,7 +317,7 @@ public class Main {
             series.addData(points.toArray(new Point2D[points.size()]));
         }
 
-        plot.plot();
+        plot.plotWithWindow();
 
     }
 
@@ -359,7 +358,7 @@ public class Main {
             series.addData(points.toArray(new Point2D[points.size()]));
         }
 
-        plot.plot();
+        plot.plotWithWindow();
     }
 
     private static void printResult(SolveParams p, Result result) {
