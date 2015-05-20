@@ -21,7 +21,7 @@ public class Lab7Main {
     @SneakyThrows
     public void run() {
 
-        int [] bigIntervals = {1, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000};
+        int [] bigIntervals = {1, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 70000, 100000, 200000};
         int [] smallintervals = {1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100,200,300,400,500, 600, 700, 800, 900, 1000};
 
         int intervals [] = bigIntervals;
@@ -32,21 +32,21 @@ public class Lab7Main {
         AbstractIntegrator integrator;
 
         Plot newtonPlot = Plot.newPlot(true, true)
-                .withFunctionPlotRange(new Range(0.1, 1000))
+                .withFunctionPlotRange(new Range(0.1, intervals[intervals.length-1]))
                 .withPlotFileName("newton-cotes.png")
                 .withTitle("Relative error of f(x) = x sin(3 PI / x) integral\\nin [1/3;3] (Newton-Cotes integration)")
                 .withXLabel("Number of intervals")
                 .withYLabel("Relative error [%]")
-                .withXRange(new Range(0.1, 1000))
+                .withXRange(new Range(0.1, intervals[intervals.length-1]))
                 .build();
 
         Plot gaussPlot = Plot.newPlot(true, true)
-                .withFunctionPlotRange(new Range(0.1, 1000))
+                .withFunctionPlotRange(new Range(0.1, intervals[intervals.length-1]))
                 .withPlotFileName("gauss-cotes.png")
                 .withTitle("Relative error of f(x) = x sin(3 PI / x) integral\\nin [1/3;3] (Gauss-Legrande integration)")
                 .withXLabel("Number of intervals")
                 .withYLabel("Relative error [%]")
-                .withXRange(new Range(0.1, 1000))
+                .withXRange(new Range(0.1, intervals[intervals.length-1]))
                 .build();
 
         DataSeries [] series = new DataSeries[4];

@@ -83,7 +83,7 @@ public class Plot {
 
     public void addPointsPlot(Point2D [] points, String description) {
 
-        DataSeries pointsSeries = this.newDataSeries(description, PlotType.POINTS);
+        DataSeries pointsSeries = this.newDataSeries(description, PlotType.LINESPOINTS);
         pointsSeries.addData(points);
 
     }
