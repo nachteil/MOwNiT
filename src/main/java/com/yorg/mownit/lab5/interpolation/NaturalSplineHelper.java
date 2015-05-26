@@ -1,18 +1,13 @@
 package com.yorg.mownit.lab5.interpolation;
 
+import com.yorg.mownit.commons.Point2D;
+
 public class NaturalSplineHelper {
 
-    private final double [] xValues;
-    private final double [] yValues;
+    private final Point2D [] points;
 
-    private final int N;
-
-    public NaturalSplineHelper(double[] xValues, double[] yValues) {
-
-        this.xValues = xValues;
-        this.yValues = yValues;
-
-        N = xValues.length - 1;
+    public NaturalSplineHelper(Point2D [] points) {
+        this.points = points;
     }
 
     double u(int i) {
@@ -20,7 +15,7 @@ public class NaturalSplineHelper {
     }
 
     double b(int i) {
-        return 6 * (yValues[i+1] - yValues[i]) / h(i);
+        return 6 * (points[i+1].getY() - points[i].getY()) / h(i);
     }
 
     double v(int i) {
@@ -28,7 +23,7 @@ public class NaturalSplineHelper {
     }
 
     double h(int i) {
-        return xValues[i+1] - xValues[i];
+        return points[i+1].getX() - points[i].getX();
     }
 
 }

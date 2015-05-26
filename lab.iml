@@ -15,5 +15,14 @@
     <orderEntry type="library" name="Maven: com.googlecode.efficient-java-matrix-library:core:0.26" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.2" level="project" />
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/flanagan.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

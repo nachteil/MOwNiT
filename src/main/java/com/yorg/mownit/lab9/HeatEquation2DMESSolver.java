@@ -81,7 +81,8 @@ public class HeatEquation2DMESSolver {
         TriDiagonalSolver solver = new TriDiagonalSolver();
         SimpleMatrix solution = solver.solve(A, b);
 
-
+        // TODO: something is missing here
+        return null;
     }
 
     private SimpleMatrix getAMatrix() {

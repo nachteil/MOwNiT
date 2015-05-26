@@ -42,17 +42,17 @@ public class Plot {
 
     public void plotWithWindow() {
 
-        createPlot(true);
+        callGnuplotToCreatePlot(true);
         new PlotWindow(outFileName);
     }
 
     public void plotWithoutWindow(boolean disposeOnExit) {
 
-        createPlot(disposeOnExit);
+        callGnuplotToCreatePlot(disposeOnExit);
     }
 
     @SneakyThrows
-    private void createPlot(boolean disposeOnExit) {
+    private void callGnuplotToCreatePlot(boolean disposeOnExit) {
 
         String gnuplotFileContent = new GnuplotHelper(this, outFileName).getGnuplotInput(1000, 800);
 
@@ -66,14 +66,14 @@ public class Plot {
         if(disposeOnExit) {
             new File(outFileName).deleteOnExit();
         }
-        InputStream stream = p.getErrorStream();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
+        InputStream processErrorStrem = p.getErrorStream();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(processErrorStrem));
         String line;
         while ((line = reader.readLine()) != null) {
             System.out.println(line);
         }
-        stream = p.getInputStream();
-        reader = new BufferedReader(new InputStreamReader(stream));
+        processErrorStrem = p.getInputStream();
+        reader = new BufferedReader(new InputStreamReader(processErrorStrem));
         while ((line = reader.readLine()) != null) {
             System.out.println(line);
         }
@@ -96,12 +96,18 @@ public class Plot {
 
     public void addPointsPlot(Point2D [] points, String description) {
 
+        DataSeries pointsSeries = this.newDataSeries(description, PlotType.POINTS);
+        pointsSeries.addData(points);
+
+    }
+    public void addLinesPointsPlot(Point2D [] points, String description) {
+
         DataSeries pointsSeries = this.newDataSeries(description, PlotType.LINESPOINTS);
         pointsSeries.addData(points);
 
     }
 
-    public static void plotPoitns(Point2D [] points) {
+    public static void plotPoints(Point2D[] points) {
 
         Range xrange = Range.getRangeX(points);
         Range yrange = Range.getRangeY(points);

@@ -1,22 +1,18 @@
 package com.yorg.mownit.lab5.interpolation;
 
+import com.yorg.mownit.commons.Point2D;
+
 public class ClampedSplineHelper {
 
-    private final double [] xValues;
-    private final double [] yValues;
+    private final Point2D [] points;
 
-    private final int N;
+    public ClampedSplineHelper(Point2D [] points) {
 
-    public ClampedSplineHelper(double[] xValues, double[] yValues) {
-
-        this.xValues = xValues;
-        this.yValues = yValues;
-
-        N = xValues.length + 1;
+        this.points = points;
     }
 
     public double h(int i) {
-        return xValues[i+1] - xValues[i];
+        return points[i+1].getX() - points[i].getX();
     }
 
 }
