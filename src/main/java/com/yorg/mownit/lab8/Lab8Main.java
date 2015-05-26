@@ -56,7 +56,7 @@ public class Lab8Main {
         Plot plot = solver.getSolutionPlot(numberOfSteps, params);
         plot.addFunctionPlot(mesExactSolution, "Exact solution");
 
-        plot.plot();
+        plot.plotWithWindow();
     }
 
     private void plotKuta(int numberOfSteps) {
@@ -70,7 +70,7 @@ public class Lab8Main {
         Plot plot = solver.getSolutionPlot(range, initialValue);
 
         plot.addFunctionPlot(exactSolution, "Exact solution");
-        plot.plot();
+        plot.plotWithWindow();
     }
 
     private void plotEuler(int numberOfSteps) {
@@ -84,7 +84,7 @@ public class Lab8Main {
         Plot plot = solver.getSolutionPlot(range, initialValue);
 
         plot.addFunctionPlot(exactSolution, "Exact solution");
-        plot.plot();
+        plot.plotWithWindow();
     }
 
 

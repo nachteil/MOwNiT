@@ -40,10 +40,21 @@ public class Plot {
         this(false, false);
     }
 
-    @SneakyThrows
-    public void plot() {
+    public void plotWithWindow() {
 
-        String gnuplotFileContent = new GnuplotHelper(this, outFileName).getGnuplotInput(1000, 800);
+        createPlot(true);
+        new PlotWindow(outFileName);
+    }
+
+    public void plotWithoutWindow(boolean disposeOnExit) {
+
+        createPlot(disposeOnExit);
+    }
+
+    @SneakyThrows
+    private void createPlot(boolean disposeOnExit) {
+
+        String gnuplotFileContent = new GnuplotHelper(this, outFileName).getGnuplotInput(800, 600);
 
         FileWriter writer = new FileWriter("plot.plt");
         writer.append(gnuplotFileContent);
@@ -51,7 +62,10 @@ public class Plot {
         writer.close();
 
         Process p = Runtime.getRuntime().exec("gnuplot ".concat("plot.plt"));
-        System.out.println("Plot status: " + p.waitFor());
+        p.waitFor();
+        if(disposeOnExit) {
+            new File(outFileName).deleteOnExit();
+        }
         InputStream stream = p.getErrorStream();
         BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
         String line;
@@ -63,7 +77,6 @@ public class Plot {
         while ((line = reader.readLine()) != null) {
             System.out.println(line);
         }
-        new PlotWindow(outFileName);
     }
 
     public DataSeries newDataSeries(String description, PlotType type) {
@@ -86,6 +99,37 @@ public class Plot {
         DataSeries pointsSeries = this.newDataSeries(description, PlotType.LINESPOINTS);
         pointsSeries.addData(points);
 
+    }
+
+    public static void plotPoitns(Point2D [] points) {
+
+        Range xrange = Range.getRangeX(points);
+        Range yrange = Range.getRangeY(points);
+
+        xrange = scaleRange(xrange);
+        yrange = scaleRange(yrange);
+
+        Plot plot = newPlot()
+                .withFunctionPlotRange(xrange)
+                .withPlotFileName("tmpplt.png")
+                .withTitle("Points")
+                .withXLabel("x")
+                .withYLabel("y")
+                .withXRange(xrange)
+                .withYRange(yrange.start, yrange.end)
+                .build();
+
+        plot.addPointsPlot(points, "points");
+        plot.plotWithWindow();
+    }
+
+    private static Range scaleRange(Range range) {
+        double start = range.start;
+        double end = range.end;
+        double delta = (end-start) * 0.1;
+        start -= delta;
+        end += delta;
+        return new Range(start, end);
     }
 
     public static PlotBuilder newPlot() {

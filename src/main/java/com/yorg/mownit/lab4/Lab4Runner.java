@@ -10,8 +10,6 @@ import com.yorg.mownit.commons.datasources.PointSource;
 import com.yorg.mownit.commons.datasources.RegularSource;
 import com.yorg.mownit.commons.functioncomp.AbsIntegralComparator;
 import com.yorg.mownit.commons.functioncomp.FunctionComparator;
-import com.yorg.mownit.commons.functioncomp.MaxDiffComparator;
-import com.yorg.mownit.commons.functioncomp.SquareIntegralComparator;
 import com.yorg.mownit.commons.plot.Plot;
 import com.yorg.mownit.lab4.interpolation.Interpolator;
 import com.yorg.mownit.lab4.interpolation.LagrangeInterpolator;
@@ -21,10 +19,8 @@ import com.yorg.mownit.lab4.polynomial.Polynomial;
 import lombok.SneakyThrows;
 
 import java.io.File;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.FileHandler;
 
 public class Lab4Runner {
 
@@ -127,9 +123,9 @@ public class Lab4Runner {
         chebyschevPlot.addFunctionPlot(chebyschevNewtonInterpolant, "Interpolation on Chebyschev nodes");
         chebyschevPlot.addPointsPlot(chebyschevPoints, "Chebyschev interpolation nodes");
 
-        allPlot.plot();
-        regularPlot.plot();
-        chebyschevPlot.plot();
+        allPlot.plotWithWindow();
+        regularPlot.plotWithWindow();
+        chebyschevPlot.plotWithWindow();
     }
 
     public void runEx1() {
@@ -240,8 +236,8 @@ public class Lab4Runner {
         plotCheb.addPointsPlot(cheLagP, "Lagrange on Chebyschev nodes");
 
 
-        plotCheb.plot();
-        plotReg.plot();
+        plotCheb.plotWithWindow();
+        plotReg.plotWithWindow();
     }
 
     public void runHermit() {
@@ -259,7 +255,7 @@ public class Lab4Runner {
 
             plot.addFunctionPlot(interpolant, "Hermit interpolation");
             plot.addPointsPlot(points, "Interpolation nodes");
-            plot.plot();
+            plot.plotWithWindow();
         }
 
 

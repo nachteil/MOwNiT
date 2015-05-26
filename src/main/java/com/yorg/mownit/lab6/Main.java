@@ -46,7 +46,7 @@ public class Main {
             series.addData(pointsFromApproximation);
         }
 
-        plot.plot();
+        plot.plotWithWindow();
     }
 
     public void compareOnDifferentPolynomialDegree(int numOfPoints) {
@@ -75,7 +75,7 @@ public class Main {
             series.addData(pointsFromApproximation);
         }
 
-        plot.plot();
+        plot.plotWithWindow();
 
     }
 
