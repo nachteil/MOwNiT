@@ -80,7 +80,7 @@ public class MESSolver {
         Plot plot = Plot.newPlot()
                 .withFunctionPlotRange(mainRange)
                 .withXRange(getPlottingRangeWithMargins(mainRange))
-                .withPlotFileName("mes.png")
+                .withPlotFileName("mes_" + numOfSteps + ".png")
                 .withTitle("MES Solution")
                 .withXLabel("x")
                 .withYLabel("y")

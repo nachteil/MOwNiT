@@ -23,7 +23,7 @@ public abstract class AbstractSolver {
         Plot plot = Plot.newPlot()
                 .withFunctionPlotRange(range)
                 .withXRange(plottingRange)
-                .withPlotFileName("solution.png")
+                .withPlotFileName(getDescription().split(" ")[0] + "_solution_" + numOfSteps + ".png")
                 .withTitle(getDescription() + " solution vs exact solution")
                 .withXLabel("x")
                 .withYLabel("y")

@@ -14,21 +14,26 @@ public class Lab8Main {
             (x, y) -> k * m * y * Math.sin(m*x) + k*k * m * Math.sin(m*x) * Math.cos(m*x);
 
     private static final Function exactSolution =
-            (x) -> Math.exp(-k * Math.cos(m*x)) - k * Math.cos(m*x) + 1;
+            (x) -> Math.exp(-k * Math.cos(m*x)) - k * Math.cos(m*x) + 1.0;
 
 
     private Lab8Main() {
 
-//        plotKuta();
-        plotMES();
+        int [] sizes = {10, 25, 50, 100, 200, 500};
+        for(int i : sizes) {
+            plotKuta(i);
+            plotEuler(i);
+            plotMES(i);
+        }
     }
 
-    private void plotMES() {
+    private void plotMES(int numberOfSteps) {
 
-        int numberOfSteps = 50;
+        double k = 3.0;
+        double m = 3.0;
+
         double start = 0;
-        double end = 3;
-        Range range = new Range(start, end);
+        double end = (2.0 * Math.PI + k) / m;
 
         Function mesExactSolution = (x) -> -k*Math.sin(m*x)+k*x;
 
@@ -54,15 +59,28 @@ public class Lab8Main {
         plot.plotWithWindow();
     }
 
-    private void plotKuta() {
+    private void plotKuta(int numberOfSteps) {
 
-        int numberOfSteps = 100;
-        double start = 0;
-        double end = 3;
+        double start = 3.0 * Math.PI / 2.0;
+        double end = 3.0 * Math.PI;
         Range range = new Range(start, end);
         double initialValue = exactSolution.getValue(range.start);
 
         AbstractSolver solver = new RungeKutaSolver(rightSideFunction, numberOfSteps);
+        Plot plot = solver.getSolutionPlot(range, initialValue);
+
+        plot.addFunctionPlot(exactSolution, "Exact solution");
+        plot.plotWithWindow();
+    }
+
+    private void plotEuler(int numberOfSteps) {
+
+        double start = 3.0 * Math.PI / 2.0;
+        double end = 3.0 * Math.PI;
+        Range range = new Range(start, end);
+        double initialValue = exactSolution.getValue(range.start);
+
+        AbstractSolver solver = new EulerSolver(rightSideFunction, numberOfSteps);
         Plot plot = solver.getSolutionPlot(range, initialValue);
 
         plot.addFunctionPlot(exactSolution, "Exact solution");

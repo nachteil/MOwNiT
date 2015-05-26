@@ -7,6 +7,7 @@ import com.yorg.mownit.commons.datasources.PointSource;
 import com.yorg.mownit.commons.datasources.RegularSource;
 import com.yorg.mownit.commons.plot.Plot;
 import com.yorg.mownit.lab5.interpolation.CubicInterpoler;
+import com.yorg.mownit.lab5.interpolation.QuadraticInterpoler;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -48,6 +49,25 @@ public class Main {
         printErrorLine(n, clampedSpline, naturalSpline);
     }
 
+    public void runQuadraticSplines(int n) {
+
+        PointSource source = new RegularSource(range);
+        Point2D [] points = source.getFunctionValues(f, n);
+
+        QuadraticInterpoler interpoler = new QuadraticInterpoler();
+        Function naturalSpline = interpoler.natural(points);
+        Function clampedSpline = interpoler.clamped(points, df.getValue(points[0].getX()));
+
+        Plot plot = getExamplePlot(n);
+
+        plot.addFunctionPlot(f, "Original function");
+        plot.addPointsPlot(points, "Source points");
+        plot.addFunctionPlot(naturalSpline, "Natural spline");
+        plot.addFunctionPlot(clampedSpline, "Clamped spline");
+
+        plot.plotWithWindow();
+    }
+
     private void printErrorLine(int n, Function clampedSpline, Function naturalSpline) {
 
         double sumClamped = 0.0;
@@ -84,10 +104,13 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        Main main = new Main();
 
         int [] ns = new int[] {5, 10, 15, 20, 25, 30, 35, 40};
+        new Main().runQuadraticSplines(90);
+    }
 
+    private static void runCubicWithErrorPlots(int[] ns) {
+        Main main = new Main();
         for(int n : ns) {
             main.runCubicSplines(n);
         }

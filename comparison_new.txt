@@ -1,0 +1,960 @@
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 5
+Jacobi result: Difference dropped below 1.000000e-03 after 51 iterations
+
+Total time: 0 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 316 iterations
+   omega = 0.2 -> 151 iterations
+   omega = 0.30000000000000004 -> 96 iterations
+   omega = 0.4 -> 68 iterations
+   omega = 0.5 -> 52 iterations
+   omega = 0.6 -> 40 iterations
+   omega = 0.7 -> 33 iterations
+   omega = 0.7999999999999999 -> 26 iterations
+   omega = 0.8999999999999999 -> 22 iterations
+   omega = 0.9999999999999999 -> 18 iterations
+   omega = 1.0999999999999999 -> 14 iterations
+   omega = 1.2 -> 11 iterations
+   omega = 1.3 -> 10 iterations
+   omega = 1.4000000000000001 -> 13 iterations
+   omega = 1.5000000000000002 -> 16 iterations
+   omega = 1.6000000000000003 -> 21 iterations
+   omega = 1.7000000000000004 -> 29 iterations
+   omega = 1.8000000000000005 -> 49 iterations
+   omega = 1.9000000000000006 -> 99 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 5
+Jacobi result: Difference dropped below 1.000000e-05 after 69 iterations
+
+Total time: 0 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 508 iterations
+   omega = 0.2 -> 244 iterations
+   omega = 0.30000000000000004 -> 155 iterations
+   omega = 0.4 -> 111 iterations
+   omega = 0.5 -> 84 iterations
+   omega = 0.6 -> 66 iterations
+   omega = 0.7 -> 53 iterations
+   omega = 0.7999999999999999 -> 43 iterations
+   omega = 0.8999999999999999 -> 35 iterations
+   omega = 0.9999999999999999 -> 28 iterations
+   omega = 1.0999999999999999 -> 22 iterations
+   omega = 1.2 -> 15 iterations
+   omega = 1.3 -> 13 iterations
+   omega = 1.4000000000000001 -> 17 iterations
+   omega = 1.5000000000000002 -> 23 iterations
+   omega = 1.6000000000000003 -> 30 iterations
+   omega = 1.7000000000000004 -> 42 iterations
+   omega = 1.8000000000000005 -> 69 iterations
+   omega = 1.9000000000000006 -> 144 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 5
+Jacobi result: Difference dropped below 1.000000e-07 after 89 iterations
+
+Total time: 0 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 694 iterations
+   omega = 0.2 -> 331 iterations
+   omega = 0.30000000000000004 -> 210 iterations
+   omega = 0.4 -> 149 iterations
+   omega = 0.5 -> 112 iterations
+   omega = 0.6 -> 87 iterations
+   omega = 0.7 -> 69 iterations
+   omega = 0.7999999999999999 -> 56 iterations
+   omega = 0.8999999999999999 -> 45 iterations
+   omega = 0.9999999999999999 -> 36 iterations
+   omega = 1.0999999999999999 -> 27 iterations
+   omega = 1.2 -> 18 iterations
+   omega = 1.3 -> 17 iterations
+   omega = 1.4000000000000001 -> 22 iterations
+   omega = 1.5000000000000002 -> 29 iterations
+   omega = 1.6000000000000003 -> 40 iterations
+   omega = 1.7000000000000004 -> 56 iterations
+   omega = 1.8000000000000005 -> 90 iterations
+   omega = 1.9000000000000006 -> 189 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 10
+Jacobi result: Difference dropped below 1.000000e-03 after 45 iterations
+
+Total time: 1 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 388 iterations
+   omega = 0.2 -> 185 iterations
+   omega = 0.30000000000000004 -> 118 iterations
+   omega = 0.4 -> 84 iterations
+   omega = 0.5 -> 63 iterations
+   omega = 0.6 -> 49 iterations
+   omega = 0.7 -> 40 iterations
+   omega = 0.7999999999999999 -> 32 iterations
+   omega = 0.8999999999999999 -> 26 iterations
+   omega = 0.9999999999999999 -> 21 iterations
+   omega = 1.0999999999999999 -> 16 iterations
+   omega = 1.2 -> 13 iterations
+   omega = 1.3 -> 13 iterations
+   omega = 1.4000000000000001 -> 14 iterations
+   omega = 1.5000000000000002 -> 18 iterations
+   omega = 1.6000000000000003 -> 23 iterations
+   omega = 1.7000000000000004 -> 32 iterations
+   omega = 1.8000000000000005 -> 50 iterations
+   omega = 1.9000000000000006 -> 107 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 5
+Jacobi result: Difference dropped below 1.000000e-09 after 120 iterations
+
+Total time: 0 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 934 iterations
+   omega = 0.2 -> 438 iterations
+   omega = 0.30000000000000004 -> 272 iterations
+   omega = 0.4 -> 187 iterations
+   omega = 0.5 -> 130 iterations
+   omega = 0.6 -> 105 iterations
+   omega = 0.7 -> 87 iterations
+   omega = 0.7999999999999999 -> 72 iterations
+   omega = 0.8999999999999999 -> 58 iterations
+   omega = 0.9999999999999999 -> 47 iterations
+   omega = 1.0999999999999999 -> 36 iterations
+   omega = 1.2 -> 24 iterations
+   omega = 1.3 -> 22 iterations
+   omega = 1.4000000000000001 -> 30 iterations
+   omega = 1.5000000000000002 -> 38 iterations
+   omega = 1.6000000000000003 -> 51 iterations
+   omega = 1.7000000000000004 -> 73 iterations
+   omega = 1.8000000000000005 -> 115 iterations
+   omega = 1.9000000000000006 -> 241 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 10
+Jacobi result: Difference dropped below 1.000000e-09 after 106 iterations
+
+Total time: 0 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 1073 iterations
+   omega = 0.2 -> 501 iterations
+   omega = 0.30000000000000004 -> 308 iterations
+   omega = 0.4 -> 208 iterations
+   omega = 0.5 -> 149 iterations
+   omega = 0.6 -> 123 iterations
+   omega = 0.7 -> 100 iterations
+   omega = 0.7999999999999999 -> 81 iterations
+   omega = 0.8999999999999999 -> 64 iterations
+   omega = 0.9999999999999999 -> 49 iterations
+   omega = 1.0999999999999999 -> 41 iterations
+   omega = 1.2 -> 33 iterations
+   omega = 1.3 -> 30 iterations
+   omega = 1.4000000000000001 -> 34 iterations
+   omega = 1.5000000000000002 -> 42 iterations
+   omega = 1.6000000000000003 -> 55 iterations
+   omega = 1.7000000000000004 -> 77 iterations
+   omega = 1.8000000000000005 -> 123 iterations
+   omega = 1.9000000000000006 -> 258 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 10
+Jacobi result: Difference dropped below 1.000000e-05 after 65 iterations
+
+Total time: 0 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 617 iterations
+   omega = 0.2 -> 294 iterations
+   omega = 0.30000000000000004 -> 186 iterations
+   omega = 0.4 -> 132 iterations
+   omega = 0.5 -> 100 iterations
+   omega = 0.6 -> 78 iterations
+   omega = 0.7 -> 62 iterations
+   omega = 0.7999999999999999 -> 49 iterations
+   omega = 0.8999999999999999 -> 39 iterations
+   omega = 0.9999999999999999 -> 31 iterations
+   omega = 1.0999999999999999 -> 24 iterations
+   omega = 1.2 -> 21 iterations
+   omega = 1.3 -> 19 iterations
+   omega = 1.4000000000000001 -> 21 iterations
+   omega = 1.5000000000000002 -> 26 iterations
+   omega = 1.6000000000000003 -> 34 iterations
+   omega = 1.7000000000000004 -> 48 iterations
+   omega = 1.8000000000000005 -> 77 iterations
+   omega = 1.9000000000000006 -> 158 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 10
+Jacobi result: Difference dropped below 1.000000e-07 after 90 iterations
+
+Total time: 1 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 935 iterations
+   omega = 0.2 -> 443 iterations
+   omega = 0.30000000000000004 -> 278 iterations
+   omega = 0.4 -> 196 iterations
+   omega = 0.5 -> 146 iterations
+   omega = 0.6 -> 113 iterations
+   omega = 0.7 -> 89 iterations
+   omega = 0.7999999999999999 -> 70 iterations
+   omega = 0.8999999999999999 -> 56 iterations
+   omega = 0.9999999999999999 -> 44 iterations
+   omega = 1.0999999999999999 -> 32 iterations
+   omega = 1.2 -> 25 iterations
+   omega = 1.3 -> 23 iterations
+   omega = 1.4000000000000001 -> 26 iterations
+   omega = 1.5000000000000002 -> 32 iterations
+   omega = 1.6000000000000003 -> 43 iterations
+   omega = 1.7000000000000004 -> 60 iterations
+   omega = 1.8000000000000005 -> 95 iterations
+   omega = 1.9000000000000006 -> 202 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 20
+Jacobi result: Difference dropped below 1.000000e-05 after 66 iterations
+
+Total time: 0 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 600 iterations
+   omega = 0.2 -> 283 iterations
+   omega = 0.30000000000000004 -> 178 iterations
+   omega = 0.4 -> 125 iterations
+   omega = 0.5 -> 94 iterations
+   omega = 0.6 -> 73 iterations
+   omega = 0.7 -> 58 iterations
+   omega = 0.7999999999999999 -> 47 iterations
+   omega = 0.8999999999999999 -> 38 iterations
+   omega = 0.9999999999999999 -> 32 iterations
+   omega = 1.0999999999999999 -> 26 iterations
+   omega = 1.2 -> 21 iterations
+   omega = 1.3 -> 20 iterations
+   omega = 1.4000000000000001 -> 22 iterations
+   omega = 1.5000000000000002 -> 27 iterations
+   omega = 1.6000000000000003 -> 35 iterations
+   omega = 1.7000000000000004 -> 49 iterations
+   omega = 1.8000000000000005 -> 77 iterations
+   omega = 1.9000000000000006 -> 161 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 20
+Jacobi result: Difference dropped below 1.000000e-09 after 111 iterations
+
+Total time: 1 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 1158 iterations
+   omega = 0.2 -> 550 iterations
+   omega = 0.30000000000000004 -> 347 iterations
+   omega = 0.4 -> 245 iterations
+   omega = 0.5 -> 184 iterations
+   omega = 0.6 -> 142 iterations
+   omega = 0.7 -> 112 iterations
+   omega = 0.7999999999999999 -> 89 iterations
+   omega = 0.8999999999999999 -> 71 iterations
+   omega = 0.9999999999999999 -> 55 iterations
+   omega = 1.0999999999999999 -> 41 iterations
+   omega = 1.2 -> 34 iterations
+   omega = 1.3 -> 33 iterations
+   omega = 1.4000000000000001 -> 37 iterations
+   omega = 1.5000000000000002 -> 46 iterations
+   omega = 1.6000000000000003 -> 60 iterations
+   omega = 1.7000000000000004 -> 84 iterations
+   omega = 1.8000000000000005 -> 132 iterations
+   omega = 1.9000000000000006 -> 278 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 20
+Jacobi result: Difference dropped below 1.000000e-03 after 46 iterations
+
+Total time: 0 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 366 iterations
+   omega = 0.2 -> 171 iterations
+   omega = 0.30000000000000004 -> 107 iterations
+   omega = 0.4 -> 76 iterations
+   omega = 0.5 -> 58 iterations
+   omega = 0.6 -> 46 iterations
+   omega = 0.7 -> 38 iterations
+   omega = 0.7999999999999999 -> 31 iterations
+   omega = 0.8999999999999999 -> 26 iterations
+   omega = 0.9999999999999999 -> 22 iterations
+   omega = 1.0999999999999999 -> 18 iterations
+   omega = 1.2 -> 15 iterations
+   omega = 1.3 -> 14 iterations
+   omega = 1.4000000000000001 -> 16 iterations
+   omega = 1.5000000000000002 -> 20 iterations
+   omega = 1.6000000000000003 -> 25 iterations
+   omega = 1.7000000000000004 -> 35 iterations
+   omega = 1.8000000000000005 -> 54 iterations
+   omega = 1.9000000000000006 -> 115 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 20
+Jacobi result: Difference dropped below 1.000000e-07 after 86 iterations
+
+Total time: 0 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 831 iterations
+   omega = 0.2 -> 393 iterations
+   omega = 0.30000000000000004 -> 246 iterations
+   omega = 0.4 -> 170 iterations
+   omega = 0.5 -> 124 iterations
+   omega = 0.6 -> 95 iterations
+   omega = 0.7 -> 81 iterations
+   omega = 0.7999999999999999 -> 68 iterations
+   omega = 0.8999999999999999 -> 56 iterations
+   omega = 0.9999999999999999 -> 46 iterations
+   omega = 1.0999999999999999 -> 36 iterations
+   omega = 1.2 -> 30 iterations
+   omega = 1.3 -> 29 iterations
+   omega = 1.4000000000000001 -> 32 iterations
+   omega = 1.5000000000000002 -> 39 iterations
+   omega = 1.6000000000000003 -> 50 iterations
+   omega = 1.7000000000000004 -> 70 iterations
+   omega = 1.8000000000000005 -> 111 iterations
+   omega = 1.9000000000000006 -> 230 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 40
+Jacobi result: Difference dropped below 1.000000e-07 after 94 iterations
+
+Total time: 1 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 973 iterations
+   omega = 0.2 -> 460 iterations
+   omega = 0.30000000000000004 -> 289 iterations
+   omega = 0.4 -> 203 iterations
+   omega = 0.5 -> 152 iterations
+   omega = 0.6 -> 117 iterations
+   omega = 0.7 -> 92 iterations
+   omega = 0.7999999999999999 -> 73 iterations
+   omega = 0.8999999999999999 -> 57 iterations
+   omega = 0.9999999999999999 -> 44 iterations
+   omega = 1.0999999999999999 -> 36 iterations
+   omega = 1.2 -> 30 iterations
+   omega = 1.3 -> 28 iterations
+   omega = 1.4000000000000001 -> 31 iterations
+   omega = 1.5000000000000002 -> 37 iterations
+   omega = 1.6000000000000003 -> 47 iterations
+   omega = 1.7000000000000004 -> 66 iterations
+   omega = 1.8000000000000005 -> 105 iterations
+   omega = 1.9000000000000006 -> 223 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 40
+Jacobi result: Difference dropped below 1.000000e-03 after 47 iterations
+
+Total time: 1 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 403 iterations
+   omega = 0.2 -> 192 iterations
+   omega = 0.30000000000000004 -> 121 iterations
+   omega = 0.4 -> 86 iterations
+   omega = 0.5 -> 65 iterations
+   omega = 0.6 -> 51 iterations
+   omega = 0.7 -> 41 iterations
+   omega = 0.7999999999999999 -> 33 iterations
+   omega = 0.8999999999999999 -> 27 iterations
+   omega = 0.9999999999999999 -> 22 iterations
+   omega = 1.0999999999999999 -> 17 iterations
+   omega = 1.2 -> 14 iterations
+   omega = 1.3 -> 14 iterations
+   omega = 1.4000000000000001 -> 15 iterations
+   omega = 1.5000000000000002 -> 18 iterations
+   omega = 1.6000000000000003 -> 24 iterations
+   omega = 1.7000000000000004 -> 33 iterations
+   omega = 1.8000000000000005 -> 52 iterations
+   omega = 1.9000000000000006 -> 109 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 40
+Jacobi result: Difference dropped below 1.000000e-05 after 65 iterations
+
+Total time: 1 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 616 iterations
+   omega = 0.2 -> 299 iterations
+   omega = 0.30000000000000004 -> 192 iterations
+   omega = 0.4 -> 139 iterations
+   omega = 0.5 -> 106 iterations
+   omega = 0.6 -> 83 iterations
+   omega = 0.7 -> 67 iterations
+   omega = 0.7999999999999999 -> 54 iterations
+   omega = 0.8999999999999999 -> 44 iterations
+   omega = 0.9999999999999999 -> 35 iterations
+   omega = 1.0999999999999999 -> 28 iterations
+   omega = 1.2 -> 24 iterations
+   omega = 1.3 -> 23 iterations
+   omega = 1.4000000000000001 -> 26 iterations
+   omega = 1.5000000000000002 -> 31 iterations
+   omega = 1.6000000000000003 -> 40 iterations
+   omega = 1.7000000000000004 -> 56 iterations
+   omega = 1.8000000000000005 -> 88 iterations
+   omega = 1.9000000000000006 -> 185 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 40
+Jacobi result: Difference dropped below 1.000000e-09 after 117 iterations
+
+Total time: 1 ms
+Simulation time: 0 ms
+Sor result: 
+   omega = 0.1 -> 1205 iterations
+   omega = 0.2 -> 569 iterations
+   omega = 0.30000000000000004 -> 357 iterations
+   omega = 0.4 -> 251 iterations
+   omega = 0.5 -> 187 iterations
+   omega = 0.6 -> 143 iterations
+   omega = 0.7 -> 112 iterations
+   omega = 0.7999999999999999 -> 88 iterations
+   omega = 0.8999999999999999 -> 67 iterations
+   omega = 0.9999999999999999 -> 53 iterations
+   omega = 1.0999999999999999 -> 44 iterations
+   omega = 1.2 -> 38 iterations
+   omega = 1.3 -> 36 iterations
+   omega = 1.4000000000000001 -> 40 iterations
+   omega = 1.5000000000000002 -> 48 iterations
+   omega = 1.6000000000000003 -> 61 iterations
+   omega = 1.7000000000000004 -> 85 iterations
+   omega = 1.8000000000000005 -> 132 iterations
+   omega = 1.9000000000000006 -> 275 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 80
+Jacobi result: Difference dropped below 1.000000e-03 after 48 iterations
+
+Total time: 2 ms
+Simulation time: 1 ms
+Sor result: 
+   omega = 0.1 -> 453 iterations
+   omega = 0.2 -> 215 iterations
+   omega = 0.30000000000000004 -> 136 iterations
+   omega = 0.4 -> 96 iterations
+   omega = 0.5 -> 73 iterations
+   omega = 0.6 -> 57 iterations
+   omega = 0.7 -> 45 iterations
+   omega = 0.7999999999999999 -> 37 iterations
+   omega = 0.8999999999999999 -> 30 iterations
+   omega = 0.9999999999999999 -> 24 iterations
+   omega = 1.0999999999999999 -> 19 iterations
+   omega = 1.2 -> 17 iterations
+   omega = 1.3 -> 16 iterations
+   omega = 1.4000000000000001 -> 18 iterations
+   omega = 1.5000000000000002 -> 21 iterations
+   omega = 1.6000000000000003 -> 27 iterations
+   omega = 1.7000000000000004 -> 37 iterations
+   omega = 1.8000000000000005 -> 56 iterations
+   omega = 1.9000000000000006 -> 118 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 80
+Jacobi result: Difference dropped below 1.000000e-05 after 66 iterations
+
+Total time: 3 ms
+Simulation time: 1 ms
+Sor result: 
+   omega = 0.1 -> 626 iterations
+   omega = 0.2 -> 297 iterations
+   omega = 0.30000000000000004 -> 187 iterations
+   omega = 0.4 -> 133 iterations
+   omega = 0.5 -> 100 iterations
+   omega = 0.6 -> 78 iterations
+   omega = 0.7 -> 62 iterations
+   omega = 0.7999999999999999 -> 50 iterations
+   omega = 0.8999999999999999 -> 41 iterations
+   omega = 0.9999999999999999 -> 33 iterations
+   omega = 1.0999999999999999 -> 26 iterations
+   omega = 1.2 -> 23 iterations
+   omega = 1.3 -> 22 iterations
+   omega = 1.4000000000000001 -> 24 iterations
+   omega = 1.5000000000000002 -> 29 iterations
+   omega = 1.6000000000000003 -> 38 iterations
+   omega = 1.7000000000000004 -> 51 iterations
+   omega = 1.8000000000000005 -> 81 iterations
+   omega = 1.9000000000000006 -> 171 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 80
+Jacobi result: Difference dropped below 1.000000e-07 after 88 iterations
+
+Total time: 5 ms
+Simulation time: 3 ms
+Sor result: 
+   omega = 0.1 -> 873 iterations
+   omega = 0.2 -> 414 iterations
+   omega = 0.30000000000000004 -> 261 iterations
+   omega = 0.4 -> 185 iterations
+   omega = 0.5 -> 139 iterations
+   omega = 0.6 -> 109 iterations
+   omega = 0.7 -> 87 iterations
+   omega = 0.7999999999999999 -> 71 iterations
+   omega = 0.8999999999999999 -> 58 iterations
+   omega = 0.9999999999999999 -> 46 iterations
+   omega = 1.0999999999999999 -> 38 iterations
+   omega = 1.2 -> 33 iterations
+   omega = 1.3 -> 32 iterations
+   omega = 1.4000000000000001 -> 36 iterations
+   omega = 1.5000000000000002 -> 43 iterations
+   omega = 1.6000000000000003 -> 55 iterations
+   omega = 1.7000000000000004 -> 77 iterations
+   omega = 1.8000000000000005 -> 120 iterations
+   omega = 1.9000000000000006 -> 250 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 80
+Jacobi result: Difference dropped below 1.000000e-09 after 113 iterations
+
+Total time: 8 ms
+Simulation time: 5 ms
+Sor result: 
+   omega = 0.1 -> 1162 iterations
+   omega = 0.2 -> 550 iterations
+   omega = 0.30000000000000004 -> 345 iterations
+   omega = 0.4 -> 242 iterations
+   omega = 0.5 -> 180 iterations
+   omega = 0.6 -> 137 iterations
+   omega = 0.7 -> 106 iterations
+   omega = 0.7999999999999999 -> 80 iterations
+   omega = 0.8999999999999999 -> 67 iterations
+   omega = 0.9999999999999999 -> 54 iterations
+   omega = 1.0999999999999999 -> 45 iterations
+   omega = 1.2 -> 39 iterations
+   omega = 1.3 -> 39 iterations
+   omega = 1.4000000000000001 -> 43 iterations
+   omega = 1.5000000000000002 -> 52 iterations
+   omega = 1.6000000000000003 -> 67 iterations
+   omega = 1.7000000000000004 -> 93 iterations
+   omega = 1.8000000000000005 -> 146 iterations
+   omega = 1.9000000000000006 -> 306 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 160
+Jacobi result: Difference dropped below 1.000000e-03 after 50 iterations
+
+Total time: 7 ms
+Simulation time: 5 ms
+Sor result: 
+   omega = 0.1 -> 423 iterations
+   omega = 0.2 -> 201 iterations
+   omega = 0.30000000000000004 -> 127 iterations
+   omega = 0.4 -> 90 iterations
+   omega = 0.5 -> 67 iterations
+   omega = 0.6 -> 53 iterations
+   omega = 0.7 -> 42 iterations
+   omega = 0.7999999999999999 -> 34 iterations
+   omega = 0.8999999999999999 -> 28 iterations
+   omega = 0.9999999999999999 -> 23 iterations
+   omega = 1.0999999999999999 -> 20 iterations
+   omega = 1.2 -> 17 iterations
+   omega = 1.3 -> 17 iterations
+   omega = 1.4000000000000001 -> 19 iterations
+   omega = 1.5000000000000002 -> 22 iterations
+   omega = 1.6000000000000003 -> 29 iterations
+   omega = 1.7000000000000004 -> 39 iterations
+   omega = 1.8000000000000005 -> 62 iterations
+   omega = 1.9000000000000006 -> 128 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 160
+Jacobi result: Difference dropped below 1.000000e-05 after 70 iterations
+
+Total time: 10 ms
+Simulation time: 6 ms
+Sor result: 
+   omega = 0.1 -> 707 iterations
+   omega = 0.2 -> 334 iterations
+   omega = 0.30000000000000004 -> 210 iterations
+   omega = 0.4 -> 148 iterations
+   omega = 0.5 -> 110 iterations
+   omega = 0.6 -> 85 iterations
+   omega = 0.7 -> 67 iterations
+   omega = 0.7999999999999999 -> 54 iterations
+   omega = 0.8999999999999999 -> 43 iterations
+   omega = 0.9999999999999999 -> 34 iterations
+   omega = 1.0999999999999999 -> 26 iterations
+   omega = 1.2 -> 22 iterations
+   omega = 1.3 -> 21 iterations
+   omega = 1.4000000000000001 -> 23 iterations
+   omega = 1.5000000000000002 -> 28 iterations
+   omega = 1.6000000000000003 -> 37 iterations
+   omega = 1.7000000000000004 -> 52 iterations
+   omega = 1.8000000000000005 -> 82 iterations
+   omega = 1.9000000000000006 -> 175 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 160
+Jacobi result: Difference dropped below 1.000000e-09 after 114 iterations
+
+Total time: 28 ms
+Simulation time: 11 ms
+Sor result: 
+   omega = 0.1 -> 1177 iterations
+   omega = 0.2 -> 558 iterations
+   omega = 0.30000000000000004 -> 351 iterations
+   omega = 0.4 -> 247 iterations
+   omega = 0.5 -> 185 iterations
+   omega = 0.6 -> 143 iterations
+   omega = 0.7 -> 113 iterations
+   omega = 0.7999999999999999 -> 89 iterations
+   omega = 0.8999999999999999 -> 71 iterations
+   omega = 0.9999999999999999 -> 55 iterations
+   omega = 1.0999999999999999 -> 46 iterations
+   omega = 1.2 -> 42 iterations
+   omega = 1.3 -> 41 iterations
+   omega = 1.4000000000000001 -> 45 iterations
+   omega = 1.5000000000000002 -> 54 iterations
+   omega = 1.6000000000000003 -> 69 iterations
+   omega = 1.7000000000000004 -> 96 iterations
+   omega = 1.8000000000000005 -> 151 iterations
+   omega = 1.9000000000000006 -> 318 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 160
+Jacobi result: Difference dropped below 1.000000e-07 after 91 iterations
+
+Total time: 13 ms
+Simulation time: 11 ms
+Sor result: 
+   omega = 0.1 -> 935 iterations
+   omega = 0.2 -> 441 iterations
+   omega = 0.30000000000000004 -> 277 iterations
+   omega = 0.4 -> 194 iterations
+   omega = 0.5 -> 144 iterations
+   omega = 0.6 -> 111 iterations
+   omega = 0.7 -> 87 iterations
+   omega = 0.7999999999999999 -> 68 iterations
+   omega = 0.8999999999999999 -> 54 iterations
+   omega = 0.9999999999999999 -> 43 iterations
+   omega = 1.0999999999999999 -> 36 iterations
+   omega = 1.2 -> 32 iterations
+   omega = 1.3 -> 33 iterations
+   omega = 1.4000000000000001 -> 36 iterations
+   omega = 1.5000000000000002 -> 43 iterations
+   omega = 1.6000000000000003 -> 56 iterations
+   omega = 1.7000000000000004 -> 77 iterations
+   omega = 1.8000000000000005 -> 122 iterations
+   omega = 1.9000000000000006 -> 255 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 320
+Jacobi result: Difference dropped below 1.000000e-03 after 51 iterations
+
+Total time: 35 ms
+Simulation time: 24 ms
+Sor result: 
+   omega = 0.1 -> 445 iterations
+   omega = 0.2 -> 211 iterations
+   omega = 0.30000000000000004 -> 133 iterations
+   omega = 0.4 -> 94 iterations
+   omega = 0.5 -> 70 iterations
+   omega = 0.6 -> 55 iterations
+   omega = 0.7 -> 44 iterations
+   omega = 0.7999999999999999 -> 35 iterations
+   omega = 0.8999999999999999 -> 28 iterations
+   omega = 0.9999999999999999 -> 23 iterations
+   omega = 1.0999999999999999 -> 18 iterations
+   omega = 1.2 -> 14 iterations
+   omega = 1.3 -> 15 iterations
+   omega = 1.4000000000000001 -> 16 iterations
+   omega = 1.5000000000000002 -> 19 iterations
+   omega = 1.6000000000000003 -> 25 iterations
+   omega = 1.7000000000000004 -> 35 iterations
+   omega = 1.8000000000000005 -> 56 iterations
+   omega = 1.9000000000000006 -> 117 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 320
+Jacobi result: Difference dropped below 1.000000e-05 after 70 iterations
+
+Total time: 44 ms
+Simulation time: 29 ms
+Sor result: 
+   omega = 0.1 -> 661 iterations
+   omega = 0.2 -> 314 iterations
+   omega = 0.30000000000000004 -> 199 iterations
+   omega = 0.4 -> 141 iterations
+   omega = 0.5 -> 106 iterations
+   omega = 0.6 -> 83 iterations
+   omega = 0.7 -> 66 iterations
+   omega = 0.7999999999999999 -> 53 iterations
+   omega = 0.8999999999999999 -> 42 iterations
+   omega = 0.9999999999999999 -> 34 iterations
+   omega = 1.0999999999999999 -> 29 iterations
+   omega = 1.2 -> 26 iterations
+   omega = 1.3 -> 26 iterations
+   omega = 1.4000000000000001 -> 29 iterations
+   omega = 1.5000000000000002 -> 35 iterations
+   omega = 1.6000000000000003 -> 45 iterations
+   omega = 1.7000000000000004 -> 61 iterations
+   omega = 1.8000000000000005 -> 96 iterations
+   omega = 1.9000000000000006 -> 201 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 320
+Jacobi result: Difference dropped below 1.000000e-07 after 93 iterations
+
+Total time: 108 ms
+Simulation time: 73 ms
+Sor result: 
+   omega = 0.1 -> 959 iterations
+   omega = 0.2 -> 455 iterations
+   omega = 0.30000000000000004 -> 286 iterations
+   omega = 0.4 -> 202 iterations
+   omega = 0.5 -> 151 iterations
+   omega = 0.6 -> 116 iterations
+   omega = 0.7 -> 91 iterations
+   omega = 0.7999999999999999 -> 72 iterations
+   omega = 0.8999999999999999 -> 56 iterations
+   omega = 0.9999999999999999 -> 44 iterations
+   omega = 1.0999999999999999 -> 38 iterations
+   omega = 1.2 -> 35 iterations
+   omega = 1.3 -> 34 iterations
+   omega = 1.4000000000000001 -> 38 iterations
+   omega = 1.5000000000000002 -> 45 iterations
+   omega = 1.6000000000000003 -> 58 iterations
+   omega = 1.7000000000000004 -> 81 iterations
+   omega = 1.8000000000000005 -> 127 iterations
+   omega = 1.9000000000000006 -> 266 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 320
+Jacobi result: Difference dropped below 1.000000e-09 after 109 iterations
+
+Total time: 83 ms
+Simulation time: 62 ms
+Sor result: 
+   omega = 0.1 -> 1132 iterations
+   omega = 0.2 -> 545 iterations
+   omega = 0.30000000000000004 -> 347 iterations
+   omega = 0.4 -> 247 iterations
+   omega = 0.5 -> 186 iterations
+   omega = 0.6 -> 144 iterations
+   omega = 0.7 -> 114 iterations
+   omega = 0.7999999999999999 -> 91 iterations
+   omega = 0.8999999999999999 -> 72 iterations
+   omega = 0.9999999999999999 -> 55 iterations
+   omega = 1.0999999999999999 -> 45 iterations
+   omega = 1.2 -> 41 iterations
+   omega = 1.3 -> 41 iterations
+   omega = 1.4000000000000001 -> 46 iterations
+   omega = 1.5000000000000002 -> 56 iterations
+   omega = 1.6000000000000003 -> 73 iterations
+   omega = 1.7000000000000004 -> 101 iterations
+   omega = 1.8000000000000005 -> 158 iterations
+   omega = 1.9000000000000006 -> 333 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 640
+Jacobi result: Difference dropped below 1.000000e-03 after 52 iterations
+
+Total time: 127 ms
+Simulation time: 92 ms
+Sor result: 
+   omega = 0.1 -> 458 iterations
+   omega = 0.2 -> 218 iterations
+   omega = 0.30000000000000004 -> 138 iterations
+   omega = 0.4 -> 97 iterations
+   omega = 0.5 -> 74 iterations
+   omega = 0.6 -> 58 iterations
+   omega = 0.7 -> 46 iterations
+   omega = 0.7999999999999999 -> 38 iterations
+   omega = 0.8999999999999999 -> 31 iterations
+   omega = 0.9999999999999999 -> 25 iterations
+   omega = 1.0999999999999999 -> 21 iterations
+   omega = 1.2 -> 19 iterations
+   omega = 1.3 -> 19 iterations
+   omega = 1.4000000000000001 -> 21 iterations
+   omega = 1.5000000000000002 -> 25 iterations
+   omega = 1.6000000000000003 -> 32 iterations
+   omega = 1.7000000000000004 -> 44 iterations
+   omega = 1.8000000000000005 -> 68 iterations
+   omega = 1.9000000000000006 -> 142 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 640
+Jacobi result: Difference dropped below 1.000000e-05 after 71 iterations
+
+Total time: 230 ms
+Simulation time: 159 ms
+Sor result: 
+   omega = 0.1 -> 689 iterations
+   omega = 0.2 -> 326 iterations
+   omega = 0.30000000000000004 -> 205 iterations
+   omega = 0.4 -> 145 iterations
+   omega = 0.5 -> 108 iterations
+   omega = 0.6 -> 84 iterations
+   omega = 0.7 -> 66 iterations
+   omega = 0.7999999999999999 -> 53 iterations
+   omega = 0.8999999999999999 -> 42 iterations
+   omega = 0.9999999999999999 -> 33 iterations
+   omega = 1.0999999999999999 -> 27 iterations
+   omega = 1.2 -> 26 iterations
+   omega = 1.3 -> 26 iterations
+   omega = 1.4000000000000001 -> 29 iterations
+   omega = 1.5000000000000002 -> 35 iterations
+   omega = 1.6000000000000003 -> 44 iterations
+   omega = 1.7000000000000004 -> 61 iterations
+   omega = 1.8000000000000005 -> 96 iterations
+   omega = 1.9000000000000006 -> 200 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 640
+Jacobi result: Difference dropped below 1.000000e-07 after 94 iterations
+
+Total time: 246 ms
+Simulation time: 171 ms
+Sor result: 
+   omega = 0.1 -> 968 iterations
+   omega = 0.2 -> 457 iterations
+   omega = 0.30000000000000004 -> 286 iterations
+   omega = 0.4 -> 201 iterations
+   omega = 0.5 -> 149 iterations
+   omega = 0.6 -> 114 iterations
+   omega = 0.7 -> 88 iterations
+   omega = 0.7999999999999999 -> 68 iterations
+   omega = 0.8999999999999999 -> 55 iterations
+   omega = 0.9999999999999999 -> 45 iterations
+   omega = 1.0999999999999999 -> 39 iterations
+   omega = 1.2 -> 36 iterations
+   omega = 1.3 -> 36 iterations
+   omega = 1.4000000000000001 -> 40 iterations
+   omega = 1.5000000000000002 -> 47 iterations
+   omega = 1.6000000000000003 -> 60 iterations
+   omega = 1.7000000000000004 -> 83 iterations
+   omega = 1.8000000000000005 -> 130 iterations
+   omega = 1.9000000000000006 -> 271 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =
+
+STARTING EXPERIMENT
+
+Stop criteria: Result between calculated and real result
+Problem size N: 640
+Jacobi result: Difference dropped below 1.000000e-09 after 118 iterations
+
+Total time: 316 ms
+Simulation time: 221 ms
+Sor result: 
+   omega = 0.1 -> 1225 iterations
+   omega = 0.2 -> 581 iterations
+   omega = 0.30000000000000004 -> 365 iterations
+   omega = 0.4 -> 257 iterations
+   omega = 0.5 -> 192 iterations
+   omega = 0.6 -> 148 iterations
+   omega = 0.7 -> 116 iterations
+   omega = 0.7999999999999999 -> 91 iterations
+   omega = 0.8999999999999999 -> 69 iterations
+   omega = 0.9999999999999999 -> 55 iterations
+   omega = 1.0999999999999999 -> 47 iterations
+   omega = 1.2 -> 43 iterations
+   omega = 1.3 -> 43 iterations
+   omega = 1.4000000000000001 -> 48 iterations
+   omega = 1.5000000000000002 -> 58 iterations
+   omega = 1.6000000000000003 -> 75 iterations
+   omega = 1.7000000000000004 -> 104 iterations
+   omega = 1.8000000000000005 -> 164 iterations
+   omega = 1.9000000000000006 -> 345 iterations
+- = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - =

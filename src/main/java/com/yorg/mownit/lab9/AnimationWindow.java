@@ -14,7 +14,7 @@ public class AnimationWindow extends JFrame {
     private int frameCounter = 0;
     private JPanel panel;
 
-    private AnimationFPSAdjuster adjuster = new AnimationFPSAdjuster(FPS);
+    private AnimationFPSAdjuster adjuster;
 
     @SneakyThrows
     public AnimationWindow(BufferedImage [] images) {
@@ -22,7 +22,8 @@ public class AnimationWindow extends JFrame {
         super("Chart");
 
         frames = images;
-        setSize(1000, 900);
+        adjuster = new AnimationFPSAdjuster(frames.length/10);
+        setSize(800, 600);
 
         panel = new JPanel() {
             @Override

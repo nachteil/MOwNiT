@@ -24,9 +24,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Lab2Runner {
 
-    // TODO: czy warunek zbieznosci jest konieczny, czy wystarczający?
-    // policzyc promien spektralny
-
     private static final int k = 8;
     private static final int m = 2;
 

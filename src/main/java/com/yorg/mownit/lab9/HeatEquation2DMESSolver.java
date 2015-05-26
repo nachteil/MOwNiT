@@ -1,8 +1,10 @@
 package com.yorg.mownit.lab9;
 
+import com.yorg.mownit.commons.CSVLogger;
 import com.yorg.mownit.commons.Point2D;
 import com.yorg.mownit.lab1.TriDiagonalSolver;
 import lombok.SneakyThrows;
+import org.ejml.simple.SimpleBase;
 import org.ejml.simple.SimpleMatrix;
 
 public class HeatEquation2DMESSolver {
@@ -28,13 +30,20 @@ public class HeatEquation2DMESSolver {
 
         Point2D[] solutionPointsForPreviousTime = getInitialPoints(parameters);
 
+        CSVLogger logger = new CSVLogger("explicit-solution.csv");
+
         for(int timeStep = 0; timeStep < NUM_STEPS_T; ++timeStep) {
 
             Point2D [] solutionForCurrentTime = solveExplicitlyForCurrentTime(solutionPointsForPreviousTime, timeStep);
 
+            for(Point2D point : solutionPointsForPreviousTime) {
+                logger.logLine(getT(timeStep), point.getX(), point.getY());
+            }
+
             resultAnimation.addFrame(solutionForCurrentTime);
             solutionPointsForPreviousTime = solutionForCurrentTime;
         }
+        logger.logLine(getT(NUM_STEPS_X-1), solutionPointsForPreviousTime[NUM_STEPS_X-1].getX(), solutionPointsForPreviousTime[NUM_STEPS_X-1].getY());
 
         return resultAnimation;
     }
@@ -45,16 +54,90 @@ public class HeatEquation2DMESSolver {
         Animation resultAnimation = new Animation(parameters);
 
         Point2D [] solutionForPreviousTime = getInitialPoints(parameters);
+        CSVLogger logger = new CSVLogger("implicit-solution.csv");
+
+        double maxVal = solutionForPreviousTime[0].getY();
 
         for(int timeStep = 0; timeStep < NUM_STEPS_T; ++timeStep) {
 
-            Point2D [] solutionForCurrentTime = solveImplicitlyForCurrentTime(solutionForPreviousTime, timeStep);
+            Point2D [] solutionForCurrentTime = solveImpl(solutionForPreviousTime, timeStep);
 
+            for(Point2D point : solutionForPreviousTime) {
+                if(point.getY() > maxVal) maxVal = point.getY();
+                logger.logLine(getT(timeStep), point.getX(), point.getY());
+            }
             resultAnimation.addFrame(solutionForCurrentTime);
             solutionForPreviousTime = solutionForCurrentTime;
         }
+        logger.logLine(getT(NUM_STEPS_X-1), solutionForPreviousTime[NUM_STEPS_X-1].getX(), solutionForPreviousTime[NUM_STEPS_X-1].getY());
 
+        System.out.println("Max val in implicit: " + maxVal);
         return resultAnimation;
+    }
+
+    private Point2D [] solveImpl(Point2D[] solutionForPreviousTime, int timeStep) {
+
+        SimpleMatrix A = getNewA();
+        SimpleMatrix b = getNewB(timeStep);
+        SimpleMatrix un = getPreviousSolutionMatrix(solutionForPreviousTime);
+
+        SimpleMatrix systemA = getSystemAMatrix(A);
+        SimpleMatrix systemB = getSystemBMatrix(A, b, un);
+        SimpleMatrix solution = systemA.solve(systemB);
+
+        Point2D [] pointsForCurrentTime = new Point2D[NUM_STEPS_X];
+        for(int i = 0; i < NUM_STEPS_X; ++i) {
+            pointsForCurrentTime[i] = new Point2D(getX(i), solution.get(i, 0));
+        }
+        return pointsForCurrentTime;
+    }
+
+    private SimpleMatrix getSystemBMatrix(SimpleMatrix a, SimpleMatrix b, SimpleMatrix un) {
+        SimpleMatrix I = SimpleMatrix.identity(NUM_STEPS_X);
+        double r = currentParams.getR();
+        return (I.plus(a.scale(r/2.0))).mult(un).plus(b);
+    }
+
+    private SimpleMatrix getSystemAMatrix(SimpleMatrix a) {
+        SimpleMatrix I = SimpleMatrix.identity(NUM_STEPS_X);
+        double r = currentParams.getR();
+        return (I.minus(a.scale(r / 2.0)));
+    }
+
+    private SimpleMatrix getPreviousSolutionMatrix(Point2D[] solutionForPreviousTime) {
+        SimpleMatrix un = new SimpleMatrix(NUM_STEPS_X, 1);
+        for(int i = 0; i < NUM_STEPS_X; ++i) {
+            un.set(i, 0, solutionForPreviousTime[i].getY());
+        }
+        return un;
+    }
+
+    private SimpleMatrix getNewB(int timeStep) {
+        SimpleMatrix b = new SimpleMatrix(NUM_STEPS_X, 1);
+        for(int i = 0; i < NUM_STEPS_X; ++i) {
+            b.set(i, 0, 0.0);
+        }
+        double currentTime = getT(timeStep);
+        double previousTime = getT(timeStep-1);
+        double firstValue = currentParams.getBoundaryConditionAt0().getValue(currentTime) + currentParams.getBoundaryConditionAt0().getValue(previousTime);
+        double lastValue = currentParams.getBoundaryConditionAtL().getValue(currentTime) + currentParams.getBoundaryConditionAtL().getValue(previousTime);
+        b.set(0,0, firstValue);
+        b.set(NUM_STEPS_X-1, 0, lastValue);
+        return b;
+    }
+
+    private SimpleMatrix getNewA() {
+
+        SimpleMatrix A = new SimpleMatrix(NUM_STEPS_X, NUM_STEPS_X);
+        double r = currentParams.getR();
+        for(int i = 0; i < NUM_STEPS_X; ++i) {
+            A.set(i, i, -2);
+        }
+        for(int i = 0; i < NUM_STEPS_X-1; ++i) {
+            A.set(i, i+1, 1);
+            A.set(i+1, i, 1);
+        }
+        return A;
     }
 
     private Point2D[] solveImplicitlyForCurrentTime(Point2D[] solutionForPreviousTime, int timeStep) {
@@ -82,7 +165,10 @@ public class HeatEquation2DMESSolver {
         SimpleMatrix solution = solver.solve(A, b);
 
         // TODO: something is missing here
-        return null;
+        for(int i = 1; i < NUM_STEPS_X-1; ++i) {
+            solutionPointsForCurrentTime[i] = new Point2D(getX(i), solution.get(i-1, 0));
+        }
+        return solutionPointsForCurrentTime;
     }
 
     private SimpleMatrix getAMatrix() {

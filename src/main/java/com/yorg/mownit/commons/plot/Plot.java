@@ -54,7 +54,7 @@ public class Plot {
     @SneakyThrows
     private void callGnuplotToCreatePlot(boolean disposeOnExit) {
 
-        String gnuplotFileContent = new GnuplotHelper(this, outFileName).getGnuplotInput(1000, 800);
+        String gnuplotFileContent = new GnuplotHelper(this, outFileName).getGnuplotInput(800, 600);
 
         FileWriter writer = new FileWriter("plot.plt");
         writer.append(gnuplotFileContent);

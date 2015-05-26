@@ -4,23 +4,34 @@ import com.yorg.mownit.commons.Function;
 
 public class Lab9Main {
 
+    private final int numStepsX = 50;
+    private final int numStepsT = 700;
+
+
     public void run() {
 
-        double A = 2.0;
+        ProblemParameters parameters = getParameters();
+        System.out.println(parameters.getR());
+
+        HeatEquation2DMESSolver solver = new HeatEquation2DMESSolver(numStepsX, numStepsT);
+        Animation animation = solver.getExplicitSolutionAsAnimation(parameters);
+        animation.display();
+    }
+
+    private ProblemParameters getParameters() {
+
+        double A = 4.0;
         double omega = 1.0;
 
-        int numStepsX = 30;
-        int numStepsT = 1000;
-
-        double tc = 0.1;
-        double l = 1;
+        double tc = 4.0 * Math.PI;
+        double l = 10;
 
         double h = l / (numStepsX-1);
         double k = tc / (numStepsT-1);
 
         Function initialCondition = (x) -> 0;
-        Function boundaryConditionAt0 = (t) -> 10;
-        Function boundaryConditionAtL = (t) -> 10;
+        Function boundaryConditionAt0 = (t) -> A * t;
+        Function boundaryConditionAtL = (t) -> Math.sin(omega * t);
 
         ProblemParameters parameters = ProblemParameters.builder()
                 .boundaryConditionAt0(boundaryConditionAt0)
@@ -32,11 +43,7 @@ public class Lab9Main {
                 .L(l)
                 .build();
 
-        System.out.println(parameters.getR());
-
-        HeatEquation2DMESSolver solver = new HeatEquation2DMESSolver(numStepsX, numStepsT);
-        Animation animation = solver.getExplicitSolutionAsAnimation(parameters);
-        animation.display();
+        return parameters;
     }
 
     public static void main(String[] args) {
